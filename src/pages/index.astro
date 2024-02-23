@@ -7,12 +7,17 @@ import { Image } from "astro:assets";
 import Avatar from "../assets/img/sunset.jpg";
 
 const { site } = Astro;
+const today = new Date();
 const image = new URL("logo-lg.png", site);
 const { title, description } = Astro.props;
+const props = Astro.props;
 //import { ViewTransitions } from "astro:transitions";
 ---
 
-<html lang="en" class="scroll-behavior: smooth; h-full motion-safe:scroll-smooth">
+<html
+  lang="en"
+  class="scroll-behavior: smooth; h-full motion-safe:scroll-smooth"
+>
   <head>
     <meta charset="utf-8" />
     <link rel="icon" type="image/png" href="favicon-16x16.png" />
@@ -43,14 +48,14 @@ const { title, description } = Astro.props;
         <h2 class="sr-only">OWDDM</h2>
         <div class="flex items-center justify-center">
           <Icon
-            name="logo-lg"
-            class="h-10 w-auto rounded sm:h-12"
-            aria-label="OWDDM Study logo"
+            name="logomark"
+            class="h-14 w-auto rounded text-red-800 hover:text-blue-950"
+            aria-label="OWDDM logo"
           />
         </div>
         <span
-          class="hidden self-center text-2xl text-gradient-brand font-extrabold uppercase tracking-[0.6em] lg:block"
-          >owddm</span
+          class="hidden self-center text-xl text-gradient-brand font-extrabold uppercase tracking-[0.6em] lg:block"
+          >owddm | kwddm</span
         >
       </a>
       <div class="flex items-center justify-center">
@@ -61,12 +66,23 @@ const { title, description } = Astro.props;
               class="flex justify-center space-x-3 md:justify-start"
             >
               <h2 class="sr-only">Blog</h2>
-              <div class="flex items-center justify-center">
-                <Icon
-                  name="logo-lg"
-                  class="h-10 w-auto rounded border-2 border-sky-500 sm:h-12 block sm:hidden"
-                  aria-label="Blog logo"
-                />
+              <div class="items-center justify-center block sm:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 16 16"
+                  {...props}
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6 0v1.5a8.46 8.46 0 0 1 6.01 2.489a8.472 8.472 0 0 1 2.489 6.01h1.5c0-5.523-4.477-10-10-10z"
+                  ></path>
+                  <path
+                    fill="currentColor"
+                    d="M6 3v1.5c1.469 0 2.85.572 3.889 1.611S11.5 8.531 11.5 10H13a7 7 0 0 0-7-7m1.5 3l-1 1L3 8l-3 6.5l.396.396l3.638-3.638a1 1 0 1 1 .707.707l-3.638 3.638l.396.396l6.5-3l1-3.5l1-1l-2.5-2.5z"
+                  ></path>
+                </svg>
               </div>
               <span
                 class="hidden font-extrabold uppercase tracking-[0.6em] sm:block"
@@ -80,12 +96,19 @@ const { title, description } = Astro.props;
               class="flex justify-center space-x-3 md:justify-start"
             >
               <h2 class="sr-only">Portfolio</h2>
-              <div class="flex items-center justify-center">
-                <Icon
-                  name="logo-lg"
-                  class="h-10 w-auto rounded border-2 border-sky-500 sm:h-12 block sm:hidden"
-                  aria-label="Portfolio logo"
-                />
+              <div class="items-center justify-center block sm:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 20 20"
+                  {...props}
+                >
+                  <path
+                    fill="currentColor"
+                    d="M4 5H.78c-.37 0-.74.32-.69.84l1.56 9.99S3.5 8.47 3.86 6.7c.11-.53.61-.7.98-.7H10s-.7-2.08-.77-2.31C9.11 3.25 8.89 3 8.45 3H5.14c-.36 0-.7.23-.8.64C4.25 4.04 4 5 4 5m4.88 0h-4s.42-1 .87-1h2.13c.48 0 1 1 1 1M2.67 16.25c-.31.47-.76.75-1.26.75h15.73c.54 0 .92-.31 1.03-.83c.44-2.19 1.68-8.44 1.68-8.44c.07-.5-.3-.73-.62-.73H16V5.53c0-.16-.26-.53-.66-.53h-3.76c-.52 0-.87.58-.87.58L10 7H5.59c-.32 0-.63.19-.69.5c0 0-1.59 6.7-1.72 7.33c-.07.37-.22.99-.51 1.42M15.38 7H11s.58-1 1.13-1h2.29c.71 0 .96 1 .96 1"
+                  ></path>
+                </svg>
               </div>
               <span
                 class="hidden font-extrabold uppercase tracking-[0.6em] sm:block"
@@ -95,7 +118,10 @@ const { title, description } = Astro.props;
           </li>
         </ul>
         <!-- darkmode icon comes here -->
-        <Icon name="theme/dark" class="h-10 w-10 sm:pb-2 cursor-pointer" />
+        <Icon
+          name="theme/dark"
+          class="h-12 w-12 pb-0 sm:pb-2 ml-4 cursor-pointer"
+        />
       </div>
     </nav>
     <section class="h-full">
@@ -110,7 +136,7 @@ const { title, description } = Astro.props;
                   class="text-2xl sm:text-4xl font-extrabold font-Futurewave"
                   >OWDDM
                 </span>Workshop<br />with <span
-                  class="text-2xl sm:text-4xl font-extrabold font-Futurewave"
+                  class="text-xl sm:text-2xl font-extrabold font-Futurewave"
                 >
                   Romano Moesa</span
                 >
@@ -118,7 +144,7 @@ const { title, description } = Astro.props;
               <h3
                 class="text-gradient-brand text-xl font-semibold uppercase tracking-widest text-right"
               >
-                April 21st | 2024
+                TBA March or April :|: 2024
               </h3>
               <p class="mt-6 max-w-xl mx-auto leading-7">
                 Learn how to create a blog & portfolio in Astro and Tailwind CSS
@@ -131,22 +157,36 @@ const { title, description } = Astro.props;
                 target="_blank"
                 class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
               >
-                <Icon
-                  name="logo-lg"
-                  class="h-10 w-auto rounded border-2 sm:h-12"
-                  aria-label="OWDDM MeetUp"
-                /><span>MeetUp</span></a
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  {...props}
+                >
+                  <path
+                    fill="currentColor"
+                    d="M6.98.555a.518.518 0 0 0-.105.011a.53.53 0 1 0 .222 1.04a.533.533 0 0 0 .409-.633a.531.531 0 0 0-.526-.418m6.455.638a.984.984 0 0 0-.514.143a.99.99 0 1 0 1.02 1.699a.99.99 0 0 0 .34-1.36a.992.992 0 0 0-.846-.482m-3.03 2.236a5.029 5.029 0 0 0-4.668 3.248a3.33 3.33 0 0 0-1.46.551a3.374 3.374 0 0 0-.94 4.562a3.634 3.634 0 0 0-.605 4.649a3.603 3.603 0 0 0 2.465 1.597c.018.732.238 1.466.686 2.114a3.9 3.9 0 0 0 5.423.992c.068-.047.12-.106.184-.157c.987.881 2.47 1.026 3.607.24a2.91 2.91 0 0 0 1.162-1.69a4.238 4.238 0 0 0 2.584-.739a4.274 4.274 0 0 0 1.19-5.789a2.466 2.466 0 0 0 .433-3.308a2.448 2.448 0 0 0-1.316-.934a4.436 4.436 0 0 0-.776-2.873a4.467 4.467 0 0 0-5.195-1.656a5.106 5.106 0 0 0-2.773-.807zm-5.603.817a.759.759 0 0 0-.423.135a.758.758 0 1 0 .863 1.248a.757.757 0 0 0 .193-1.055a.758.758 0 0 0-.633-.328m15.994 2.37a.842.842 0 0 0-.47.151a.845.845 0 1 0 1.175.215a.845.845 0 0 0-.705-.365zm-8.15 1.028c.063 0 .124.005.182.014a.901.901 0 0 1 .45.187c.169.134.273.241.432.393c.24.227.414.089.534.02c.208-.122.369-.219.984-.208c.633.011 1.363.237 1.514 1.317c.168 1.199-1.966 4.289-1.817 5.722c.106 1.01 1.815.299 1.96 1.22c.186 1.198-2.136.753-2.667.493c-.832-.408-1.337-1.34-1.12-2.26c.16-.688 1.7-3.498 1.757-3.93c.059-.44-.177-.476-.324-.484c-.19-.01-.34.081-.526.362c-.169.255-2.082 4.085-2.248 4.398c-.296.56-.67.694-1.044.674c-.548-.029-.798-.32-.72-.848c.047-.31 1.26-3.049 1.323-3.476c.039-.265-.013-.546-.275-.68c-.263-.135-.572.07-.664.227c-.128.215-1.848 4.706-2.032 5.038c-.316.576-.65.76-1.152.784c-1.186.056-2.065-.92-1.678-2.116c.173-.532 1.316-4.571 1.895-5.599c.389-.69 1.468-1.216 2.217-.892c.387.167.925.437 1.084.507c.366.163.759-.277.913-.412c.155-.134.302-.276.49-.357c.142-.06.343-.095.532-.094m10.88 2.057a.468.468 0 0 0-.093.011a.467.467 0 0 0-.36.555a.47.47 0 0 0 .557.36a.47.47 0 0 0 .36-.557a.47.47 0 0 0-.464-.37zm-22.518.81a.997.997 0 0 0-.832.434a1 1 0 1 0 1.39-.258a1 1 0 0 0-.558-.176m21.294 2.094a.635.635 0 0 0-.127.013a.627.627 0 0 0-.48.746a.628.628 0 0 0 .746.483a.628.628 0 0 0 .482-.746a.63.63 0 0 0-.621-.496m-18.24 6.097a.453.453 0 0 0-.092.012a.464.464 0 1 0 .195.908a.464.464 0 0 0 .356-.553a.465.465 0 0 0-.459-.367m13.675 1.55a1.044 1.044 0 0 0-.583.187a1.047 1.047 0 1 0 1.456.265a1.044 1.044 0 0 0-.873-.451zM11.4 22.154a.643.643 0 0 0-.36.115a.646.646 0 0 0-.164.899a.646.646 0 0 0 .899.164a.646.646 0 0 0 .164-.898a.646.646 0 0 0-.54-.28z"
+                  ></path>
+                </svg><span>MeetUp</span></a
               >
               <a
                 href="https://owddm.com/"
                 class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
                 target="_blank"
               >
-                <Icon
-                  name="logo-lg"
-                  class="h-10 w-auto rounded sm:h-12"
-                  aria-label="OWDDM Website"
-                />
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="36"
+                  height="36"
+                  viewBox="0 0 128 128"
+                  {...props}
+                >
+                  <path
+                    fill="#006ca2"
+                    d="M64 .29C28.87.29.29 28.87.28 64C.29 99.13 28.87 127.71 64 127.71c35.13 0 63.71-28.59 63.71-63.71C127.71 28.87 99.13.29 64 .29m25.2 84.96c-6.24-1.85-13.4-3.09-21.59-3.38V67.61h24.18c-.26 6.62-1.21 12.45-2.59 17.64M38.75 42.74c6.26 1.86 13.43 3.11 21.64 3.4v14.25H36.16c.25-6.63 1.2-12.46 2.59-17.65m-2.53 24.87h24.17v14.25c-8.17.29-15.31 1.52-21.55 3.37c-1.4-5.19-2.36-11.01-2.62-17.62m55.57-7.22H67.61V46.13c8.17-.29 15.31-1.52 21.55-3.37c1.4 5.2 2.37 11.02 2.63 17.63m28.58 0h-21.3c-.26-7.53-1.35-14.17-2.96-20.05c5.73-2.35 10.52-5.19 14.49-8.17c5.58 8.14 9.1 17.79 9.77 28.22m-14.23-33.91c-3.39 2.51-7.44 4.93-12.28 6.96c-4.3-11.24-10.54-19.06-16.1-24.23c11.15 2.8 20.95 8.95 28.38 17.27m-19.22 9.4c-5.58 1.64-11.97 2.75-19.31 3.03V10.3c5.43 3.88 13.95 11.8 19.31 25.58M60.39 10.22v28.69c-7.38-.28-13.82-1.41-19.43-3.07c5.37-13.9 13.96-21.78 19.43-25.62M50.24 9.21c-5.55 5.17-11.79 12.99-16.09 24.23c-4.84-2.03-8.89-4.45-12.28-6.96c7.42-8.32 17.23-14.47 28.37-17.27M17.41 32.17c3.97 2.97 8.77 5.82 14.49 8.16c-1.61 5.88-2.7 12.52-2.96 20.05H7.64c.66-10.42 4.19-20.07 9.77-28.21m11.53 35.44c.26 7.53 1.36 14.17 2.96 20.06c-5.73 2.34-10.52 5.19-14.49 8.16c-5.58-8.14-9.11-17.79-9.78-28.22zm-7.06 33.91c3.38-2.51 7.43-4.92 12.28-6.96c4.3 11.23 10.53 19.06 16.09 24.23c-11.15-2.8-20.96-8.95-28.37-17.27m19.2-9.4c5.58-1.64 11.97-2.75 19.3-3.03v28.62c-5.41-3.88-13.93-11.81-19.3-25.59m26.53 25.65V89.09c7.37.28 13.79 1.4 19.38 3.05c-5.36 13.9-13.91 21.79-19.38 25.63m10.16 1.02c5.55-5.17 11.79-12.99 16.09-24.23c4.84 2.03 8.89 4.45 12.27 6.96c-7.42 8.32-17.22 14.47-28.36 17.27m32.83-22.96c-3.97-2.97-8.77-5.82-14.49-8.16c1.61-5.89 2.7-12.52 2.96-20.06h21.3c-.66 10.43-4.19 20.08-9.77 28.22"
+                  ></path>
+                </svg>
                 <span>Website</span>
               </a>
             </div>
@@ -164,31 +204,314 @@ const { title, description } = Astro.props;
         </div>
       </div>
     </section>
-    
+
+    <section>
+      <div class="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32">
+        <div class="mx-auto max-w-2xl lg:text-center px-6 lg:px-0">
+          <h2 class="text-base font-semibold leading-7 font-Futurewave">
+            Small Disclaimer
+          </h2>
+          <p
+            class="mt-2 text-3xl font-bold tracking-tight font-Futurewave sm:text-4xl"
+          >
+            Tools you need to deploy your app
+          </p>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            This workshop is geared for beginners in web development or
+            hobbyists whom have an interest in creating websites.
+          </p>
+          <p class="mt-6 text-lg leading-8 text-gray-600">
+            In this workshop you are going to learn the steps in creating a new
+            website project from scratch all the way to deployment.
+            We will be using the Astro.build framework with the use of Tailwind
+            CSS and HyGraph as a headless CMS.<br /><br />
+
+            <span class="font-Futurewave text-red-800">
+              NOTE: make sure of the pre-requirements, there will be no such
+              "installations" or troubleshooting during the workshop!
+            </span>
+          </p>
+          <div class="p-8 sm:p-10 lg:flex-auto">
+            <div class="mt-10 flex items-center gap-x-4">
+              <h4
+                class="flex-none text-sm font-semibold leading-6 font-Futurewave"
+              >
+                Pre-Requirements
+              </h4>
+              <div class="h-px flex-auto bg-sky-500"></div>
+            </div>
+            <ul
+              role="list"
+              class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 sm:grid-cols-2 sm:gap-6"
+            >
+              <li class="flex gap-x-3">
+                <svg
+                  class="h-6 w-5 flex-none text-sky-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                Node & NPM installed
+              </li>
+              <li class="flex gap-x-3">
+                <svg
+                  class="h-6 w-5 flex-none text-sky-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                GIT installed
+              </li>
+              <li class="flex gap-x-3">
+                <svg
+                  class="h-6 w-5 flex-none text-sky-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                GitHub & HyGraph account
+              </li>
+              <li class="flex gap-x-3">
+                <svg
+                  class="h-6 w-5 flex-none text-sky-500"
+                  viewBox="0 0 20 20"
+                  fill="currentColor"
+                  aria-hidden="true"
+                >
+                  <path
+                    fill-rule="evenodd"
+                    d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                    clip-rule="evenodd"></path>
+                </svg>
+                VS Code (optional)
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="p-8 sm:p-10 lg:flex-auto">
+          <div class="mt-10 flex items-center gap-x-4">
+            <h4
+              class="flex-none text-sm font-semibold leading-6 font-Futurewave"
+            >
+              Topics
+            </h4>
+            <div class="h-px flex-auto bg-sky-500"></div>
+          </div>
+          <ul
+            role="list"
+            class="mt-8 grid grid-cols-1 gap-4 text-sm leading-6 sm:grid-cols-3 sm:gap-6"
+          >
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Astro build setup
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Tailwind CSS basics
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              VS Code basics
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Re:factor your code
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              SEO basics
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Connecting Astro with HyGraph CMS
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Deployment to Netlify
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              Connecting to an external API with VUE in Astro
+            </li>
+            <li class="flex gap-x-3">
+              <svg
+                class="h-6 w-5 flex-none text-sky-500"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M16.704 4.153a.75.75 0 01.143 1.052l-8 10.5a.75.75 0 01-1.127.075l-4.5-4.5a.75.75 0 011.06-1.06l3.894 3.893 7.48-9.817a.75.75 0 011.05-.143z"
+                  clip-rule="evenodd"></path>
+              </svg>
+              DarkMode & Responsive Web Design
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
     <section id="blog">
-      <div class="bg-white py-24 sm:py-32 font-sans">
+      <div class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-0">
+        <svg
+          viewBox="0 0 1024 1024"
+          class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)] sm:left-full sm:-ml-80 lg:left-1/2 lg:ml-0 lg:-translate-x-1/2 lg:translate-y-0"
+          aria-hidden="true"
+        >
+          <defs>
+            <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+              <stop stop-color="#7775D6"></stop>
+              <stop offset="1" stop-color="#E935C1"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <svg
+            class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+            aria-hidden="true"
+          >
+            <defs>
+              <pattern
+                id="e813992c-7d03-4cc4-a2bd-151760b470a0"
+                width="200"
+                height="200"
+                x="50%"
+                y="-1"
+                patternUnits="userSpaceOnUse"
+              >
+                <path d="M100 200V.5M.5 .5H200" fill="none"></path>
+              </pattern>
+            </defs>
+            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+              <path
+                d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                stroke-width="0"></path>
+            </svg>
+            <rect
+              width="100%"
+              height="100%"
+              stroke-width="0"
+              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"></rect>
+          </svg>
+        </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto text-center max-w-2xl lg:mx-0">
             <h2 class="text-3xl font-bold font-Futurewave sm:text-4xl">
-              From the blog
+              From the Blog
             </h2>
             <p class="mt-2 text-lg leading-8">
               Learn how to grow your business with our expert advice.
             </p>
           </div>
           <div
-            class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
             <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
                 <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                  <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+                  <time datetime="2024-03-16" class="">Mar 16, 2024</time>
                   <a
                     href="#"
                     class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >Marketing</a
+                    >Astro.build</a
                   >
                 </div>
                 <div class="group relative">
@@ -197,30 +520,32 @@ const { title, description } = Astro.props;
                   >
                     <a href="#">
                       <span class="absolute inset-0"></span>
-                      Boost your conversion rate
+                      Boost your skills
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                    Sed exercitationem placeat consectetur nulla deserunt vel.
-                    Iusto corrupti dicta.
+                    Building and deploying an Astro.Build website with Tailwind
+                    CSS and HyGraph as an headless CMS.
                   </p>
                 </div>
+
                 <div class="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div class="text-sm leading-6">
-                    <p class="font-semibold text-gray-900">
-                      <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                      </a>
-                    </p>
-                    <p class="text-gray-600">Co-Founder / CTO</p>
+                  <hr class="py-6 border border-orange-600" />
+                  <div class="flex justify-center space-x-3 md:justify-start">
+                    <h2 class="sr-only">OWDDM</h2>
+                    <div class="flex items-center justify-center">
+                      <Icon
+                        name="masscomMediaLogo"
+                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        aria-label="MassCom Media logo"
+                      />
+                    </div>
+                    <span class="self-center font-Futurewave text-xs"
+                      ><a href="#">romano moesa</a><br /><span
+                        class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+                        >owddm</span
+                      ></span
+                    >
                   </div>
                 </div>
               </article>
@@ -232,11 +557,11 @@ const { title, description } = Astro.props;
                 class="flex max-w-xl flex-col items-start justify-between"
               >
                 <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                  <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+                  <time datetime="2024-03-16" class="">Mar 16, 2024</time>
                   <a
                     href="#"
                     class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >Marketing</a
+                    >Astro.build</a
                   >
                 </div>
                 <div class="group relative">
@@ -245,30 +570,31 @@ const { title, description } = Astro.props;
                   >
                     <a href="#">
                       <span class="absolute inset-0"></span>
-                      Boost your conversion rate
+                      Boost your skills
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                    Sed exercitationem placeat consectetur nulla deserunt vel.
-                    Iusto corrupti dicta.
+                    Building and deploying an Astro.Build website with Tailwind
+                    CSS and HyGraph as an headless CMS.
                   </p>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div class="text-sm leading-6">
-                    <p class="font-semibold text-gray-900">
-                      <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                      </a>
-                    </p>
-                    <p class="text-gray-600">Co-Founder / CTO</p>
+                  <hr class="py-6 border border-orange-600" />
+                  <div class="flex justify-center space-x-3 md:justify-start">
+                    <h2 class="sr-only">OWDDM</h2>
+                    <div class="flex items-center justify-center">
+                      <Icon
+                        name="masscomMediaLogo"
+                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        aria-label="MassCom Media logo"
+                      />
+                    </div>
+                    <span class="self-center font-Futurewave text-xs"
+                      ><a href="#">romano moesa</a><br /><span
+                        class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+                        >owddm</span
+                      ></span
+                    >
                   </div>
                 </div>
               </article>
@@ -278,11 +604,11 @@ const { title, description } = Astro.props;
                 class="flex max-w-xl flex-col items-start justify-between"
               >
                 <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                  <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+                  <time datetime="2024-03-16" class="">Mar 16, 2024</time>
                   <a
                     href="#"
                     class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >Marketing</a
+                    >Astro.build</a
                   >
                 </div>
                 <div class="group relative">
@@ -291,30 +617,31 @@ const { title, description } = Astro.props;
                   >
                     <a href="#">
                       <span class="absolute inset-0"></span>
-                      Boost your conversion rate
+                      Boost your skills
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                    Sed exercitationem placeat consectetur nulla deserunt vel.
-                    Iusto corrupti dicta.
+                    Building and deploying an Astro.Build website with Tailwind
+                    CSS and HyGraph as an headless CMS.
                   </p>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div class="text-sm leading-6">
-                    <p class="font-semibold text-gray-900">
-                      <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                      </a>
-                    </p>
-                    <p class="text-gray-600">Co-Founder / CTO</p>
+                  <hr class="py-6 border border-orange-600" />
+                  <div class="flex justify-center space-x-3 md:justify-start">
+                    <h2 class="sr-only">OWDDM</h2>
+                    <div class="flex items-center justify-center">
+                      <Icon
+                        name="masscomMediaLogo"
+                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        aria-label="MassCom Media logo"
+                      />
+                    </div>
+                    <span class="self-center font-Futurewave text-xs"
+                      ><a href="#">romano moesa</a><br /><span
+                        class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+                        >owddm</span
+                      ></span
+                    >
                   </div>
                 </div>
               </article>
@@ -323,8 +650,38 @@ const { title, description } = Astro.props;
         </div>
       </div>
     </section>
+
     <section id="portfolio">
-      <div class="bg-white py-24 sm:py-32 font-sans">
+      <div class="relative isolate overflow-hidden px-6 py-24 sm:py-32 lg:px-0">
+        <svg
+          viewBox="0 0 1024 1024"
+          class="absolute left-1/2 top-1/2 -z-10 h-[64rem] w-[64rem] -translate-y-1/2 [mask-image:radial-gradient(closest-side,white,transparent)]"
+          aria-hidden="true"
+        >
+          <defs>
+            <radialGradient id="759c1415-0410-454c-8f7c-9a820de03641">
+              <stop stop-color="#7775D6"></stop>
+              <stop offset="1" stop-color="#E935C1"></stop>
+            </radialGradient>
+          </defs>
+        </svg>
+        <div class="absolute inset-0 -z-10 overflow-hidden">
+          <svg
+            class="absolute left-[max(50%,25rem)] top-0 h-[64rem] w-[128rem] -translate-x-1/2 stroke-gray-200 [mask-image:radial-gradient(64rem_64rem_at_top,white,transparent)]"
+            aria-hidden="true"
+          >
+            <svg x="50%" y="-1" class="overflow-visible fill-gray-50">
+              <path
+                d="M-100.5 0h201v201h-201Z M699.5 0h201v201h-201Z M499.5 400h201v201h-201Z M-300.5 600h201v201h-201Z"
+                stroke-width="0"></path>
+            </svg>
+            <rect
+              width="100%"
+              height="100%"
+              stroke-width="0"
+              fill="url(#e813992c-7d03-4cc4-a2bd-151760b470a0)"></rect>
+          </svg>
+        </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto text-center max-w-2xl lg:mx-0">
             <h2 class="text-3xl font-bold font-Futurewave sm:text-4xl">
@@ -335,18 +692,18 @@ const { title, description } = Astro.props;
             </p>
           </div>
           <div
-            class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-gray-200 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+            class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
             <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
                 <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                  <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+                  <time datetime="2024-03-16" class="">Mar 16, 2024</time>
                   <a
                     href="#"
                     class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >Marketing</a
+                    >Astro.build</a
                   >
                 </div>
                 <div class="group relative">
@@ -355,30 +712,31 @@ const { title, description } = Astro.props;
                   >
                     <a href="#">
                       <span class="absolute inset-0"></span>
-                      Boost your conversion rate
+                      Boost your skills
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                    Sed exercitationem placeat consectetur nulla deserunt vel.
-                    Iusto corrupti dicta.
+                    Building and deploying an Astro.Build website with Tailwind
+                    CSS and HyGraph as an headless CMS.
                   </p>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div class="text-sm leading-6">
-                    <p class="font-semibold text-gray-900">
-                      <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                      </a>
-                    </p>
-                    <p class="text-gray-600">Co-Founder / CTO</p>
+                  <hr class="py-6 border border-orange-600" />
+                  <div class="flex justify-center space-x-3 md:justify-start">
+                    <h2 class="sr-only">OWDDM</h2>
+                    <div class="flex items-center justify-center">
+                      <Icon
+                        name="masscomMediaLogo"
+                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        aria-label="MassCom Media logo"
+                      />
+                    </div>
+                    <span class="self-center font-Futurewave text-xs"
+                      ><a href="#">romano moesa</a><br /><span
+                        class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+                        >owddm</span
+                      ></span
+                    >
                   </div>
                 </div>
               </article>
@@ -390,11 +748,11 @@ const { title, description } = Astro.props;
                 class="flex max-w-xl flex-col items-start justify-between"
               >
                 <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                  <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+                  <time datetime="2024-03-16" class="">Mar 16, 2024</time>
                   <a
                     href="#"
                     class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >Marketing</a
+                    >Astro.build</a
                   >
                 </div>
                 <div class="group relative">
@@ -403,30 +761,31 @@ const { title, description } = Astro.props;
                   >
                     <a href="#">
                       <span class="absolute inset-0"></span>
-                      Boost your conversion rate
+                      Boost your skills
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                    Sed exercitationem placeat consectetur nulla deserunt vel.
-                    Iusto corrupti dicta.
+                    Building and deploying an Astro.Build website with Tailwind
+                    CSS and HyGraph as an headless CMS.
                   </p>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div class="text-sm leading-6">
-                    <p class="font-semibold text-gray-900">
-                      <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                      </a>
-                    </p>
-                    <p class="text-gray-600">Co-Founder / CTO</p>
+                  <hr class="py-6 border border-orange-600" />
+                  <div class="flex justify-center space-x-3 md:justify-start">
+                    <h2 class="sr-only">OWDDM</h2>
+                    <div class="flex items-center justify-center">
+                      <Icon
+                        name="masscomMediaLogo"
+                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        aria-label="MassCom Media logo"
+                      />
+                    </div>
+                    <span class="self-center font-Futurewave text-xs"
+                      ><a href="#">romano moesa</a><br /><span
+                        class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+                        >owddm</span
+                      ></span
+                    >
                   </div>
                 </div>
               </article>
@@ -436,11 +795,11 @@ const { title, description } = Astro.props;
                 class="flex max-w-xl flex-col items-start justify-between"
               >
                 <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                  <time datetime="2020-03-16" class="">Mar 16, 2020</time>
+                  <time datetime="2024-03-16" class="">Mar 16, 2024</time>
                   <a
                     href="#"
                     class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
-                    >Marketing</a
+                    >Astro.build</a
                   >
                 </div>
                 <div class="group relative">
@@ -449,30 +808,31 @@ const { title, description } = Astro.props;
                   >
                     <a href="#">
                       <span class="absolute inset-0"></span>
-                      Boost your conversion rate
+                      Boost your skills
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                    totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                    Sed exercitationem placeat consectetur nulla deserunt vel.
-                    Iusto corrupti dicta.
+                    Building and deploying an Astro.Build website with Tailwind
+                    CSS and HyGraph as an headless CMS.
                   </p>
                 </div>
                 <div class="relative mt-8 flex items-center gap-x-4">
-                  <img
-                    src="https://images.unsplash.com/photo-1519244703995-f4e0f30006d5?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                    alt=""
-                    class="h-10 w-10 rounded-full bg-gray-50"
-                  />
-                  <div class="text-sm leading-6">
-                    <p class="font-semibold text-gray-900">
-                      <a href="#">
-                        <span class="absolute inset-0"></span>
-                        Michael Foster
-                      </a>
-                    </p>
-                    <p class="text-gray-600">Co-Founder / CTO</p>
+                  <hr class="py-6 border border-orange-600" />
+                  <div class="flex justify-center space-x-3 md:justify-start">
+                    <h2 class="sr-only">OWDDM</h2>
+                    <div class="flex items-center justify-center">
+                      <Icon
+                        name="masscomMediaLogo"
+                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        aria-label="MassCom Media logo"
+                      />
+                    </div>
+                    <span class="self-center font-Futurewave text-xs"
+                      ><a href="#">romano moesa</a><br /><span
+                        class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+                        >owddm</span
+                      ></span
+                    >
                   </div>
                 </div>
               </article>
@@ -481,5 +841,109 @@ const { title, description } = Astro.props;
         </div>
       </div>
     </section>
+    <footer class="bg-gradient-brand">
+      <div
+        class="container px-6 py-8 mx-auto mt-24 font-Futurewave tracking-widest"
+      >
+        <div class="flex flex-col items-center text-center">
+          <a href="/" class="flex justify-center space-x-3 md:justify-start">
+            <h2 class="sr-only">OWDDM</h2>
+            <div class="flex items-center justify-center">
+              <Icon
+                name="logomark"
+                class="h-12 w-auto rounded sm:h-16 text-red-800 hover:text-blue-950"
+                aria-label="OWDDM Study logo"
+              />
+            </div>
+            <span
+              class="self-center text-xs sm:text-2xl text-gradient-brand font-extrabold uppercase tracking-[0.6em]"
+              >owddm | kwddm</span
+            >
+          </a>
+        </div>
+
+        <hr class="my-10 border-gray-200 dark:border-gray-700" />
+
+        <div class="flex flex-col items-center sm:flex-row sm:justify-between">
+          <p class="text-sm">
+            © Copyright 2024 : {today.getFullYear()}<br />All Rights Reserved.
+          </p>
+          <a
+            href="https://masscom.media"
+            class="flex justify-center space-x-3 md:justify-start"
+          >
+            <div class="flex items-center justify-center">
+              <Icon
+                name="masscomMediaLogo"
+                class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12"
+                aria-label="MassCom Media logo"
+              />
+            </div>
+            <span class="self-center text-xs font-extrabold tracking-[0.6em]">
+              a MassCom Media project</span
+            >
+          </a>
+
+          <div class="flex mt-3 -mx-2 sm:mt-0">
+            <a
+              href="#"
+              class="mx-4 text-sm transition-colors duration-300"
+              aria-label="MeetUp"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                {...props}
+              >
+                <path
+                  fill="currentColor"
+                  d="M6.98.555a.518.518 0 0 0-.105.011a.53.53 0 1 0 .222 1.04a.533.533 0 0 0 .409-.633a.531.531 0 0 0-.526-.418m6.455.638a.984.984 0 0 0-.514.143a.99.99 0 1 0 1.02 1.699a.99.99 0 0 0 .34-1.36a.992.992 0 0 0-.846-.482m-3.03 2.236a5.029 5.029 0 0 0-4.668 3.248a3.33 3.33 0 0 0-1.46.551a3.374 3.374 0 0 0-.94 4.562a3.634 3.634 0 0 0-.605 4.649a3.603 3.603 0 0 0 2.465 1.597c.018.732.238 1.466.686 2.114a3.9 3.9 0 0 0 5.423.992c.068-.047.12-.106.184-.157c.987.881 2.47 1.026 3.607.24a2.91 2.91 0 0 0 1.162-1.69a4.238 4.238 0 0 0 2.584-.739a4.274 4.274 0 0 0 1.19-5.789a2.466 2.466 0 0 0 .433-3.308a2.448 2.448 0 0 0-1.316-.934a4.436 4.436 0 0 0-.776-2.873a4.467 4.467 0 0 0-5.195-1.656a5.106 5.106 0 0 0-2.773-.807zm-5.603.817a.759.759 0 0 0-.423.135a.758.758 0 1 0 .863 1.248a.757.757 0 0 0 .193-1.055a.758.758 0 0 0-.633-.328m15.994 2.37a.842.842 0 0 0-.47.151a.845.845 0 1 0 1.175.215a.845.845 0 0 0-.705-.365zm-8.15 1.028c.063 0 .124.005.182.014a.901.901 0 0 1 .45.187c.169.134.273.241.432.393c.24.227.414.089.534.02c.208-.122.369-.219.984-.208c.633.011 1.363.237 1.514 1.317c.168 1.199-1.966 4.289-1.817 5.722c.106 1.01 1.815.299 1.96 1.22c.186 1.198-2.136.753-2.667.493c-.832-.408-1.337-1.34-1.12-2.26c.16-.688 1.7-3.498 1.757-3.93c.059-.44-.177-.476-.324-.484c-.19-.01-.34.081-.526.362c-.169.255-2.082 4.085-2.248 4.398c-.296.56-.67.694-1.044.674c-.548-.029-.798-.32-.72-.848c.047-.31 1.26-3.049 1.323-3.476c.039-.265-.013-.546-.275-.68c-.263-.135-.572.07-.664.227c-.128.215-1.848 4.706-2.032 5.038c-.316.576-.65.76-1.152.784c-1.186.056-2.065-.92-1.678-2.116c.173-.532 1.316-4.571 1.895-5.599c.389-.69 1.468-1.216 2.217-.892c.387.167.925.437 1.084.507c.366.163.759-.277.913-.412c.155-.134.302-.276.49-.357c.142-.06.343-.095.532-.094m10.88 2.057a.468.468 0 0 0-.093.011a.467.467 0 0 0-.36.555a.47.47 0 0 0 .557.36a.47.47 0 0 0 .36-.557a.47.47 0 0 0-.464-.37zm-22.518.81a.997.997 0 0 0-.832.434a1 1 0 1 0 1.39-.258a1 1 0 0 0-.558-.176m21.294 2.094a.635.635 0 0 0-.127.013a.627.627 0 0 0-.48.746a.628.628 0 0 0 .746.483a.628.628 0 0 0 .482-.746a.63.63 0 0 0-.621-.496m-18.24 6.097a.453.453 0 0 0-.092.012a.464.464 0 1 0 .195.908a.464.464 0 0 0 .356-.553a.465.465 0 0 0-.459-.367m13.675 1.55a1.044 1.044 0 0 0-.583.187a1.047 1.047 0 1 0 1.456.265a1.044 1.044 0 0 0-.873-.451zM11.4 22.154a.643.643 0 0 0-.36.115a.646.646 0 0 0-.164.899a.646.646 0 0 0 .899.164a.646.646 0 0 0 .164-.898a.646.646 0 0 0-.54-.28z"
+                ></path>
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="mx-4 text-sm transition-colors duration-300"
+              aria-label="Discord"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                {...props}
+              >
+                <path
+                  fill="currentColor"
+                  d="M20.317 4.37a19.791 19.791 0 0 0-4.885-1.515a.074.074 0 0 0-.079.037c-.21.375-.444.864-.608 1.25a18.27 18.27 0 0 0-5.487 0a12.64 12.64 0 0 0-.617-1.25a.077.077 0 0 0-.079-.037A19.736 19.736 0 0 0 3.677 4.37a.07.07 0 0 0-.032.027C.533 9.046-.32 13.58.099 18.057a.082.082 0 0 0 .031.057a19.9 19.9 0 0 0 5.993 3.03a.078.078 0 0 0 .084-.028a14.09 14.09 0 0 0 1.226-1.994a.076.076 0 0 0-.041-.106a13.107 13.107 0 0 1-1.872-.892a.077.077 0 0 1-.008-.128a10.2 10.2 0 0 0 .372-.292a.074.074 0 0 1 .077-.01c3.928 1.793 8.18 1.793 12.062 0a.074.074 0 0 1 .078.01c.12.098.246.198.373.292a.077.077 0 0 1-.006.127a12.299 12.299 0 0 1-1.873.892a.077.077 0 0 0-.041.107c.36.698.772 1.362 1.225 1.993a.076.076 0 0 0 .084.028a19.839 19.839 0 0 0 6.002-3.03a.077.077 0 0 0 .032-.054c.5-5.177-.838-9.674-3.549-13.66a.061.061 0 0 0-.031-.03M8.02 15.33c-1.182 0-2.157-1.085-2.157-2.419c0-1.333.956-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.956 2.418-2.157 2.418m7.975 0c-1.183 0-2.157-1.085-2.157-2.419c0-1.333.955-2.419 2.157-2.419c1.21 0 2.176 1.096 2.157 2.42c0 1.333-.946 2.418-2.157 2.418"
+                ></path>
+              </svg>
+            </a>
+
+            <a
+              href="#"
+              class="mx-4 text-sm transition-colors duration-300"
+              aria-label="LinkedIn"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="36"
+                height="36"
+                viewBox="0 0 24 24"
+                {...props}
+              >
+                <path
+                  fill="currentColor"
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037c-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85c3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065a2.064 2.064 0 1 1 2.063 2.065m1.782 13.019H3.555V9h3.564zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0z"
+                ></path>
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

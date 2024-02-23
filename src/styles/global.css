@@ -18,11 +18,11 @@ a,
 .text-gradient-brand {
   @apply transition-colors duration-200;
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-gray-950 via-sky-500 to-purple-500;
+  @apply bg-gradient-to-br from-sky-500 via-red-800 to-sky-200;
 }
 
 .bg-gradient-brand {
-  @apply bg-gradient-to-br from-teal-500 via-sky-500 to-purple-800;
+  @apply bg-gradient-to-br from-blue-900 via-gray-300 to-purple-500;
 }
 
 .bg-gradient-hero {
