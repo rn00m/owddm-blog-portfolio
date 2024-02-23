@@ -1,0 +1,35 @@
+@font-face {
+  font-family: 'Futurewave';
+  src: local(''),
+    url('../fonts/Futurewave.otf') format('opentype'),
+    url('../fonts/Futurewave.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+a,
+.btn {
+  @apply rounded-lg p-3;
+  @apply transition-colors duration-200;
+  @apply hover:text-gray-200;
+}
+
+.text-gradient-brand {
+  @apply transition-colors duration-200;
+  @apply bg-clip-text text-transparent;
+  @apply bg-gradient-to-br from-gray-950 via-sky-500 to-purple-500;
+}
+
+.bg-gradient-brand {
+  @apply bg-gradient-to-br from-teal-500 via-sky-500 to-purple-800;
+}
+
+.bg-gradient-hero {
+  @apply bg-gradient-to-br from-purple-800/80 via-sky-500/70 to-amber-300/50;
+}
+
+.bg-gradient-nav {
+  @apply bg-gradient-to-br from-amber-300/70 via-purple-800/40 to-amber-300/50;
+  @apply backdrop-blur-md text-black;
+}
