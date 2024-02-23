@@ -11,7 +11,7 @@ const today = new Date();
 const image = new URL("logo-lg.png", site);
 const { title, description } = Astro.props;
 const props = Astro.props;
-//import { ViewTransitions } from "astro:transitions";
+import { ViewTransitions } from "astro:transitions";
 ---
 
 <html
@@ -39,6 +39,7 @@ const props = Astro.props;
     <meta property="twitter:image" content={image} />
     <!-- sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <ViewTransitions />
   </head>
   <body>
     <nav
