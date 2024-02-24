@@ -26,10 +26,10 @@ a,
 }
 
 .bg-gradient-hero {
-  @apply bg-gradient-to-br from-purple-800/80 via-sky-500/70 to-amber-300/50;
+  @apply bg-gradient-to-br from-white/10 via-sky-200/70 to-purple-300/50;
 }
 
 .bg-gradient-nav {
-  @apply bg-gradient-to-br from-amber-300/70 via-purple-800/40 to-amber-300/50;
+  @apply bg-gradient-to-br from-gray-100/40 via-sky-200/40 to-white/50;
   @apply backdrop-blur-md text-black;
 }

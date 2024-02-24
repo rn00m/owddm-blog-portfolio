@@ -41,9 +41,9 @@ import { ViewTransitions } from "astro:transitions";
     <link rel="sitemap" href="/sitemap-index.xml" />
     <ViewTransitions />
   </head>
-  <body>
+  <body class="bg-gray-50 antialiased">
     <nav
-      class="sticky top-0 z-50 flex justify-between mx-auto font-Futurewave bg-gradient-nav px-8 py-4"
+      class="sticky top-0 z-50 flex justify-between mx-auto font-Futurewave bg-gradient-nav px-1 sm:px-8 py-2 sm:py-4"
     >
       <a href="/" class="flex justify-center space-x-3 md:justify-start">
         <h2 class="sr-only">OWDDM</h2>
@@ -127,25 +127,25 @@ import { ViewTransitions } from "astro:transitions";
     </nav>
     <section class="h-full">
       <div
-        class="relative grid h-screen place-items-center bg-gradient-hero p-6"
+        class="relative grid h-screen place-items-center bg-gradient-hero pt-6 sm:p-6"
       >
         <div class="flex flex-col-reverse lg:flex-row items-center gap-12 px-6">
           <div>
             <div class="text-center">
               <h2 class="font-Futurewave text-lg sm:text-xl">
                 an <span
-                  class="text-2xl sm:text-4xl font-extrabold font-Futurewave"
+                  class="text-xl sm:text-4xl font-extrabold font-Futurewave text-gradient-brand"
                   >OWDDM
-                </span>Workshop<br />with <span
+                </span>Workshop<br />with<span
                   class="text-xl sm:text-2xl font-extrabold font-Futurewave"
                 >
                   Romano Moesa</span
                 >
               </h2>
               <h3
-                class="text-gradient-brand text-xl font-semibold uppercase tracking-widest text-right"
+                class="text-gradient-brand text-xl font-semibold uppercase tracking-widest sm:text-right"
               >
-                TBA March or April :|: 2024
+                TBA March or April :2024
               </h3>
               <p class="mt-6 max-w-xl mx-auto leading-7">
                 Learn how to create a blog & portfolio in Astro and Tailwind CSS
@@ -156,7 +156,7 @@ import { ViewTransitions } from "astro:transitions";
               <a
                 href="https://www.meetup.com/ja-JP/osaka-web-designers-and-developers-meetup/"
                 target="_blank"
-                class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+                class="flex items-center justify-center gap-3 border-2 border-current px-4 py-2 sm:px-6 sm:py-4"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -198,7 +198,7 @@ import { ViewTransitions } from "astro:transitions";
                 src={Avatar}
                 alt="Selfie"
                 loading="eager"
-                class="rounded-full w-80 h-80 mx-auto self-center md:ml-10 mb-10"
+                class="rounded-full w-80 h-80 md:ml-10 mb-10"
               />
             </div>
           </div>
@@ -218,28 +218,33 @@ import { ViewTransitions } from "astro:transitions";
             Tools you need to deploy your app
           </p>
           <p class="mt-6 text-lg leading-8 text-gray-600">
-            This workshop is geared for beginners in web development or
-            hobbyists whom have an interest in creating websites.
+            This workshop is designed for web development beginners or hobbyists who are interested in building websites.
           </p>
           <p class="mt-6 text-lg leading-8 text-gray-600">
-            In this workshop you are going to learn the steps in creating a new
-            website project from scratch all the way to deployment. We will be
-            using the Astro.build framework with the use of Tailwind CSS and
-            HyGraph as a headless CMS.<br /><br />
-
+            During this workshop, you’ll gain insights into the process of creating a new website project from the ground up, all the way through deployment. Our tools of choice include the Astro.build framework, along with Tailwind CSS and HyGraph as a headless CMS.<br /><br />
+          </p>
+        </div>
+        <div
+          class="mx-auto max-w-5xl lg:text-center px-6 lg:px-0 m-3 pb-12 pt-3 nm-flat-white-lg rounded-lg p-8 text-center w-full"
+        >
+          <p class="mt-6 text-lg leading-8 text-gray-600">
             <span class="font-Futurewave text-red-800">
-              NOTE: make sure of the pre-requirements, unfortunately we will not
-              be spending time for installations or troubleshooting during the
-              workshop! Apologies for the inconvenience, but you will have to
-              learn it yourself!
+              NOTE: Apologies for any inconvenience. Please be aware that you’ll
+              need to set up your own development environment. See
+              pre-requirements!
+              <br /><br />
+              Due to time constraints, there won’t be an opportunity for installation
+              or troubleshooting during the workshop.
             </span>
           </p>
-          <div class="p-8 sm:p-10 lg:flex-auto">
+        </div>
+        <div class="mx-auto max-w-2xl lg:text-center px-6 lg:px-0">
+          <div class="p-0 sm:p-10 lg:flex-auto">
             <div class="mt-10 flex items-center gap-x-4">
               <h4
                 class="flex-none text-sm font-semibold leading-6 font-Futurewave"
               >
-                Pre-Requirements (links provided)
+                Pre-Requirements
               </h4>
               <div class="h-px flex-auto bg-sky-500"></div>
             </div>
@@ -513,7 +518,7 @@ import { ViewTransitions } from "astro:transitions";
           <div
             class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
-            <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
+            <div class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
@@ -547,7 +552,7 @@ import { ViewTransitions } from "astro:transitions";
                     <div class="flex items-center justify-center">
                       <Icon
                         name="masscomMediaLogo"
-                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
                         aria-label="MassCom Media logo"
                       />
                     </div>
@@ -563,7 +568,7 @@ import { ViewTransitions } from "astro:transitions";
             </div>
 
             <!-- More posts... -->
-            <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
+            <div class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
@@ -596,7 +601,7 @@ import { ViewTransitions } from "astro:transitions";
                     <div class="flex items-center justify-center">
                       <Icon
                         name="masscomMediaLogo"
-                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
                         aria-label="MassCom Media logo"
                       />
                     </div>
@@ -610,7 +615,7 @@ import { ViewTransitions } from "astro:transitions";
                 </div>
               </article>
             </div>
-            <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
+            <div class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
@@ -643,7 +648,7 @@ import { ViewTransitions } from "astro:transitions";
                     <div class="flex items-center justify-center">
                       <Icon
                         name="masscomMediaLogo"
-                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
                         aria-label="MassCom Media logo"
                       />
                     </div>
@@ -659,10 +664,7 @@ import { ViewTransitions } from "astro:transitions";
             </div>
           </div>
           <p class="mt-8 text-right text-sm font-Futurewave">
-            <a
-              class="text-primary"
-              href="#"
-            >
+            <a href="#">
               ... find more blog articles &rarr;
             </a>
           </p>
@@ -713,7 +715,7 @@ import { ViewTransitions } from "astro:transitions";
           <div
             class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
-            <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
+            <div class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
@@ -746,7 +748,7 @@ import { ViewTransitions } from "astro:transitions";
                     <div class="flex items-center justify-center">
                       <Icon
                         name="masscomMediaLogo"
-                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
                         aria-label="MassCom Media logo"
                       />
                     </div>
@@ -762,7 +764,7 @@ import { ViewTransitions } from "astro:transitions";
             </div>
 
             <!-- More posts... -->
-            <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
+            <div class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
@@ -795,7 +797,7 @@ import { ViewTransitions } from "astro:transitions";
                     <div class="flex items-center justify-center">
                       <Icon
                         name="masscomMediaLogo"
-                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
                         aria-label="MassCom Media logo"
                       />
                     </div>
@@ -809,7 +811,7 @@ import { ViewTransitions } from "astro:transitions";
                 </div>
               </article>
             </div>
-            <div class="m-3 rounded-2xl border border-sky-500 px-3 pb-12 pt-3">
+            <div class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
               >
@@ -842,7 +844,7 @@ import { ViewTransitions } from "astro:transitions";
                     <div class="flex items-center justify-center">
                       <Icon
                         name="masscomMediaLogo"
-                        class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                        class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
                         aria-label="MassCom Media logo"
                       />
                     </div>
@@ -858,17 +860,14 @@ import { ViewTransitions } from "astro:transitions";
             </div>
           </div>
           <p class="mt-8 text-right text-sm font-Futurewave">
-            <a
-              class="text-primary"
-              href="#"
-            >
+            <a class="text-primary" href="#">
               ... check out my projects &rarr;
             </a>
           </p>
         </div>
       </div>
     </section>
-    <footer class="bg-gradient-brand">
+    <footer class="bg-gradient-nav">
       <div
         class="container px-6 py-8 mx-auto mt-24 font-Futurewave tracking-widest"
       >
@@ -902,11 +901,13 @@ import { ViewTransitions } from "astro:transitions";
             <div class="flex items-center justify-center">
               <Icon
                 name="masscomMediaLogo"
-                class="h-8 w-auto rounded border-2 border-sky-500 sm:h-10 lg:h-12"
+                class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12"
                 aria-label="MassCom Media logo"
               />
             </div>
-            <span class="self-center text-xs font-extrabold tracking-[0.6em]">
+            <span
+              class="self-center hidden sm:block text-xs font-extrabold tracking-[0.6em]"
+            >
               a MassCom Media project</span
             >
           </a>
