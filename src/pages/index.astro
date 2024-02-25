@@ -3,12 +3,13 @@
 import "../styles/index.css";
 import { Icon } from "astro-icon/components";
 import { ViewTransitions } from "astro:transitions";
+import DarkMode from "../components/DarkMode.astro";
 
 // Assets images
 import { Image } from "astro:assets";
 import RyuHero from "../assets/img/goldDragonRed.jpg";
 import Avatar from "../assets/img/sunset.jpg";
-import Skills from "../assets/img/cta.png";
+import Skills from "../assets/img/mushroom.svg";
 
 const { site } = Astro;
 const today = new Date();
@@ -42,9 +43,26 @@ const props = Astro.props;
     <meta property="twitter:image" content={image} />
     <!-- sitemap -->
     <link rel="sitemap" href="/sitemap-index.xml" />
+    <script>
+      function setMode() {
+        if (
+          localStorage.getItem("color-theme") === "dark" ||
+          (!("color-theme" in localStorage) &&
+            window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+          document.documentElement.classList.add("dark");
+        } else {
+          document.documentElement.classList.remove("dark");
+        }
+      }
+      setMode();
+      document.addEventListener("astro:after-swap", setMode);
+    </script>
     <ViewTransitions />
   </head>
-  <body class="bg-gray-50 antialiased">
+  <body
+    class="bg-gray-50 antialiased transition-colors duration-500 dark:bg-gray-700 text-gray-600 dark:text-gray-50"
+  >
     <nav
       class="sticky top-0 z-50 flex justify-between mx-auto font-Futurewave bg-gradient-nav px-1 sm:px-8 py-2 sm:py-4"
     >
@@ -122,18 +140,22 @@ const props = Astro.props;
           </li>
         </ul>
         <!-- darkmode icon comes here -->
-        <Icon
-          name="theme/dark"
-          class="h-12 w-12 pb-0 sm:pb-2 ml-4 cursor-pointer"
-        />
+        <DarkMode />
       </div>
     </nav>
     <section class="h-full">
-      <Image src={RyuHero} alt="Call to action image" loading="eager" class="absolute object-cover h-screen" />
+      <Image
+        src={RyuHero}
+        alt="Call to action image"
+        loading="eager"
+        class="absolute object-cover h-screen"
+      />
       <div
-        class="relative grid h-screen place-items-center bg-gradient-hero p-6"
+        class="relative grid h-screen place-items-center bg-red-800/80 dark:bg-gray-800/90 p-6"
       >
-        <div class="flex flex-col-reverse lg:flex-row items-center gap-12 px-0 sm:px-6">
+        <div
+          class="flex flex-col-reverse lg:flex-row items-center gap-12 px-0 sm:px-6"
+        >
           <div class="text-grey-950">
             <div class="text-center">
               <h2 class="font-Futurewave text-xs sm:text-xl">
@@ -151,12 +173,16 @@ const props = Astro.props;
               >
                 TBA March or April :2024
               </h3>
-              <p class="mt-6 max-w-xl mx-auto leading-7 text-gradient-hero font-Futurewave text-xs sm:text-base">
+              <p
+                class="mt-6 max-w-xl mx-auto leading-7 text-gradient-hero font-Futurewave text-xs sm:text-base"
+              >
                 Learn how to create a blog & portfolio in Astro and Tailwind CSS
                 with HyGraph as a headless CMS.
               </p>
             </div>
-            <div class="flex justify-center space-x-1 sm:space-x-5 my-4 lg:my-10">
+            <div
+              class="flex justify-center space-x-1 sm:space-x-5 my-4 lg:my-10 font-Futurewave"
+            >
               <a
                 href="https://www.meetup.com/ja-JP/osaka-web-designers-and-developers-meetup/"
                 target="_blank"
@@ -177,18 +203,18 @@ const props = Astro.props;
               >
               <a
                 href="https://owddm.com/"
-                class="flex items-center justify-center gap-3 border-2 border-current px-6 py-4"
+                class="flex items-center justify-center gap-3 border-2 border-current px-2 py-1 sm:px-6 sm:py-4"
                 target="_blank"
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
-                  width="36"
-                  height="36"
+                  width="28"
+                  height="28"
                   viewBox="0 0 128 128"
                   {...props}
                 >
                   <path
-                    fill="#006ca2"
+                    fill="currentColor"
                     d="M64 .29C28.87.29.29 28.87.28 64C.29 99.13 28.87 127.71 64 127.71c35.13 0 63.71-28.59 63.71-63.71C127.71 28.87 99.13.29 64 .29m25.2 84.96c-6.24-1.85-13.4-3.09-21.59-3.38V67.61h24.18c-.26 6.62-1.21 12.45-2.59 17.64M38.75 42.74c6.26 1.86 13.43 3.11 21.64 3.4v14.25H36.16c.25-6.63 1.2-12.46 2.59-17.65m-2.53 24.87h24.17v14.25c-8.17.29-15.31 1.52-21.55 3.37c-1.4-5.19-2.36-11.01-2.62-17.62m55.57-7.22H67.61V46.13c8.17-.29 15.31-1.52 21.55-3.37c1.4 5.2 2.37 11.02 2.63 17.63m28.58 0h-21.3c-.26-7.53-1.35-14.17-2.96-20.05c5.73-2.35 10.52-5.19 14.49-8.17c5.58 8.14 9.1 17.79 9.77 28.22m-14.23-33.91c-3.39 2.51-7.44 4.93-12.28 6.96c-4.3-11.24-10.54-19.06-16.1-24.23c11.15 2.8 20.95 8.95 28.38 17.27m-19.22 9.4c-5.58 1.64-11.97 2.75-19.31 3.03V10.3c5.43 3.88 13.95 11.8 19.31 25.58M60.39 10.22v28.69c-7.38-.28-13.82-1.41-19.43-3.07c5.37-13.9 13.96-21.78 19.43-25.62M50.24 9.21c-5.55 5.17-11.79 12.99-16.09 24.23c-4.84-2.03-8.89-4.45-12.28-6.96c7.42-8.32 17.23-14.47 28.37-17.27M17.41 32.17c3.97 2.97 8.77 5.82 14.49 8.16c-1.61 5.88-2.7 12.52-2.96 20.05H7.64c.66-10.42 4.19-20.07 9.77-28.21m11.53 35.44c.26 7.53 1.36 14.17 2.96 20.06c-5.73 2.34-10.52 5.19-14.49 8.16c-5.58-8.14-9.11-17.79-9.78-28.22zm-7.06 33.91c3.38-2.51 7.43-4.92 12.28-6.96c4.3 11.23 10.53 19.06 16.09 24.23c-11.15-2.8-20.96-8.95-28.37-17.27m19.2-9.4c5.58-1.64 11.97-2.75 19.3-3.03v28.62c-5.41-3.88-13.93-11.81-19.3-25.59m26.53 25.65V89.09c7.37.28 13.79 1.4 19.38 3.05c-5.36 13.9-13.91 21.79-19.38 25.63m10.16 1.02c5.55-5.17 11.79-12.99 16.09-24.23c4.84 2.03 8.89 4.45 12.27 6.96c-7.42 8.32-17.22 14.47-28.36 17.27m32.83-22.96c-3.97-2.97-8.77-5.82-14.49-8.16c1.61-5.89 2.7-12.52 2.96-20.06h21.3c-.66 10.43-4.19 20.08-9.77 28.22"
                   ></path>
                 </svg>
@@ -202,7 +228,7 @@ const props = Astro.props;
                 src={Avatar}
                 alt="Selfie"
                 loading="eager"
-                class="rounded-full w-32 h-32 sm:w-80 sm:h-80 md:ml-10 mb-10"
+                class="rounded-full w-52 h-52 sm:w-80 sm:h-80 md:ml-10 mb-10"
               />
             </div>
           </div>
@@ -213,7 +239,7 @@ const props = Astro.props;
     <section id="notice">
       <div class="mx-auto max-w-7xl px-6 lg:px-8 py-24 sm:py-32">
         <div
-          class="mx-auto max-w-5xl lg:text-center px-2 sm:px-6 lg:px-0 m-3 pb-12 pt-3 nm-flat-white-lg rounded-lg p-8 text-left sm:text-center w-full"
+          class="mx-auto max-w-5xl lg:text-center px-2 sm:px-6 lg:px-0 m-3 pb-12 pt-3 nm-flat-white-lg dark:nm-flat-gray-700-lg rounded-lg p-8 text-left sm:text-center w-full"
         >
           <div class="mx-auto max-w-2xl lg:text-center pt-24 px-6 lg:px-0">
             <h2 class="text-base font-semibold leading-7 font-Futurewave">
@@ -225,7 +251,9 @@ const props = Astro.props;
               Important Notice
             </p>
           </div>
-          <p class="mt-6 text-sm sm:text-lg leading-8 text-red-800 font-Futurewave px-6 sm:px-8">
+          <p
+            class="mt-6 text-sm sm:text-lg leading-8 text-red-800 dark:text-sky-500 font-Futurewave px-6 sm:px-8"
+          >
             Apologies for any inconvenience. Please be aware that you'll need to
             set up your own development environment. See pre-requirements as per
             below!
@@ -329,7 +357,7 @@ const props = Astro.props;
           >
             Tools you need to deploy your app
           </p>
-          <p class="mt-6 text-lg leading-8 text-gray-600">
+          <p class="mt-6 text-lg leading-8">
             During this workshop, you'll gain insights into the process of
             creating a new website project from the ground up, all the way
             through deployment. Our tools of choice include the Astro.build
@@ -483,11 +511,13 @@ const props = Astro.props;
     </section>
 
     <section id="CTA">
-      <div class="bg-sky-200">
+      <div class="bg-sky-200 dark:bg-sky-950">
         <section class="lg:py-12 lg:flex lg:justify-center">
-          <div class="bg-sky-200 lg:mx-8 lg:flex md:max-w-7xl lg:w-full">
+          <div
+            class="bg-sky-200 dark:bg-sky-950 lg:mx-8 lg:flex md:max-w-7xl lg:w-full"
+          >
             <div class="w-full px-6 py-12 lg:max-w-5xl lg:w-1/2">
-              <div class="h-64 bg-cover">
+              <div class="h-64 bg-cover z-40">
                 <Image
                   src={Skills}
                   alt="Call to action image"
@@ -580,7 +610,11 @@ const props = Astro.props;
         </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto text-center max-w-2xl lg:mx-0 font-Futurewave">
-            <h2 class="text-xl font-bold sm:text-4xl nm-flat-stone-100-sm p-6">From the Blog</h2>
+            <h2
+              class="text-xl font-bold sm:text-4xl nm-flat-stone-100-sm dark:nm-flat-gray-800-lg p-6"
+            >
+              From the Blog
+            </h2>
             <p class="mt-2 text-sm leading-8">
               My adventurous life as a developer in Japan.
             </p>
@@ -589,7 +623,7 @@ const props = Astro.props;
             class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
             <div
-              class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
+              class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg dark:nm-flat-gray-800-lg dark:hover:dark:nm-flat-gray-700-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
             >
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
@@ -641,7 +675,7 @@ const props = Astro.props;
 
             <!-- More posts... -->
             <div
-              class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
+              class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg dark:nm-flat-gray-800-lg dark:hover:dark:nm-flat-gray-700-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
             >
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
@@ -690,7 +724,7 @@ const props = Astro.props;
               </article>
             </div>
             <div
-              class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
+              class="m-3 px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg dark:nm-flat-gray-800-lg dark:hover:dark:nm-flat-gray-700-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
             >
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
@@ -779,7 +813,9 @@ const props = Astro.props;
         </div>
         <div class="mx-auto max-w-7xl px-6 lg:px-8">
           <div class="mx-auto text-center max-w-2xl lg:mx-0">
-            <h2 class="text-xl font-bold font-Futurewave sm:text-4xl nm-convex-sky-200-sm p-6">
+            <h2
+              class="text-xl font-bold font-Futurewave sm:text-4xl nm-convex-sky-200-sm dark:nm-flat-gray-700-lg p-6"
+            >
               Portfolio
             </h2>
             <p class="mt-2 text-lg leading-8">
@@ -790,7 +826,7 @@ const props = Astro.props;
             class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3"
           >
             <div
-              class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
+              class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg dark:nm-flat-gray-700-lg dark:hover:dark:nm-flat-gray-800-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
             >
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
@@ -841,7 +877,7 @@ const props = Astro.props;
 
             <!-- More posts... -->
             <div
-              class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
+              class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg dark:nm-flat-gray-700-lg dark:hover:dark:nm-flat-gray-800-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
             >
               <article
                 class="flex max-w-xl flex-col items-start justify-between"
@@ -890,7 +926,7 @@ const props = Astro.props;
               </article>
             </div>
             <div
-              class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
+              class="m-3 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg dark:nm-flat-gray-700-lg dark:hover:dark:nm-flat-gray-800-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full"
             >
               <article
                 class="flex max-w-xl flex-col items-start justify-between"

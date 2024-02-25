@@ -12,7 +12,7 @@ a,
 .btn {
   @apply rounded-lg p-3;
   @apply transition-colors duration-200;
-  @apply hover:text-gray-200;
+  @apply text-gray-900 hover:text-gray-200;
 }
 
 .text-gradient-brand {
@@ -32,7 +32,7 @@ a,
 .bg-gradient-text {
   @apply rounded-xl p-12;
   @apply bg-gradient-to-br from-gray-950/10 via-black/10 to-gray-950/50;
-  @apply backdrop-blur-sm text-black;
+  @apply backdrop-blur-sm;
 }
 .bg-gradient-brand {
   @apply bg-gradient-to-br from-blue-900 via-gray-300 to-purple-500;
