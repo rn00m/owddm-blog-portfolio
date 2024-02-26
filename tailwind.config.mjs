@@ -5,7 +5,8 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Futurewave: ["Futurewave", "monospace"],
+        Futurewave: ['Futurewave', 'monospace'],
+        Inter: ['Inter', 'sans-serif']
       },
     },
   },

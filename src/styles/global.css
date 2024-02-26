@@ -8,11 +8,15 @@
   font-display: swap;
 }
 
+body {
+  font-family: 'Inter Variable', sans-serif;
+  font-weight: 400;
+}
 a,
 .btn {
   @apply rounded-lg p-3;
   @apply transition-colors duration-200;
-  @apply text-gray-900 hover:text-gray-200;
+  @apply text-gray-900 hover:text-gray-300;
 }
 
 .text-gradient-brand {
