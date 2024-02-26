@@ -4,16 +4,16 @@ import RyuHero from "../assets/img/goldDragonRed.webp";
 import Avatar from "../assets/img/sunset-crop.webp";
 
 const props = Astro.props;
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <section id="hero" class="h-full">
   <Image
     src={RyuHero}
-    alt="Call to action image"
+    alt="Hero image - An Asian golden dragon"
     loading="eager"
     class="absolute object-cover h-screen"
-    width={1920}
-    height={1076}
+    sizes={sizes}
   />
   <div
     class="relative grid h-screen place-items-center bg-red-800/80 dark:bg-gray-800/90 p-6"
