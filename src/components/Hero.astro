@@ -7,7 +7,7 @@ const props = Astro.props;
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
-<section id="hero" class="h-full aspect-w-16 aspect-h-9">
+<section id="hero" class="h-full aspect-auto">
   <Image
     src={RyuHero}
     alt="Hero image - An Asian golden dragon"
@@ -88,7 +88,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
         </div>
       </div>
       <div id="avatar">
-        <div class="overflow-hidden aspect-w-1 aspect-h-1 md:aspect-w-16 md:aspect-h-9 lg:aspect-w-4 lg:aspect-h-3">
+        <div class="overflow-hidden aspect-auto">
           <Image
             src={Avatar}
             alt="Selfie"
