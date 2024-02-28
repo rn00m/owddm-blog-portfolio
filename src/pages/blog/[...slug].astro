@@ -1,6 +1,7 @@
 ---
 // For this page also think of using NEXT/PREVIOUS page for some more functionality, but that is up to you!
 
+import TextArticle from "../../components/TextArticle.astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
 
 interface Post {
@@ -82,6 +83,7 @@ const post = Astro.props.post;
 ---
 
 <BlogLayout title={post.title}>
+  <TextArticle />
   <div class="flex">
     <a class="font-Futurewave" href="/">home</a>
     <a class="font-Futurewave" href="/blog">/blog</a>
@@ -90,13 +92,18 @@ const post = Astro.props.post;
   <div class="flex">
     <a class="font-Futurewave" href="/blog">go back</a>
   </div>
-  {post.title}
-  {post.description}
-  {post.tags}
-  {post.date}
-  {post.authors[0].name}
-  {post.authors[0].intro}
-  {post.authors[0].picture.url}
-  {post.coverImage.url}
-  {post.content.html}
+  <div class="prose prose-2xl">
+    {post.title}
+    {post.description}
+    {post.tags}
+    {post.date}
+    {post.authors[0].name}
+    {post.authors[0].intro}
+    {post.authors[0].picture.url}
+    {post.coverImage.url}
+    <p
+      class="mt-5 line-clamp-3 text-sm leading-6"
+      set:html={post.content.html}
+    />
+  </div>
 </BlogLayout>

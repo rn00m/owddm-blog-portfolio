@@ -1,6 +1,7 @@
 ---
 // For this page also think of using NEXT/PREVIOUS page for some more functionality, but that is up to you!
 
+import TextArticle from "../../components/TextArticle.astro";
 import ProjectLayout from "../../layouts/ProjectLayout.astro";
 //import { slide } from "astro:transitions";
 
@@ -72,6 +73,7 @@ const project = Astro.props.project;
 ---
 
 <ProjectLayout title={project.name}>
+  <TextArticle />
   <div class="flex">
     <a class="font-Futurewave" href="/">home</a>
     <a class="font-Futurewave" href="/portfolio">/portfolio</a>
