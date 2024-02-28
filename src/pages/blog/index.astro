@@ -1,0 +1,42 @@
+---
+import { Icon } from "astro-icon/components";
+import MainLayout from "../../layouts/MainLayout.astro";
+import BlogIndex from "../../components/BlogIndex.astro";
+import TextBlogIndex from "../../components/TextBlogIndex.astro";
+
+const {
+  title = "My Blog Index",
+  description = "The Epic Chronicles of My Thrilling Quests Across Japan!",
+} = Astro.props;
+---
+
+<MainLayout title={title} description={description}>
+  <TextBlogIndex />
+  <section
+    class="my-36 flex scroll-mt-24 flex-col items-center gap-4 space-y-8 px-6"
+  >
+    <div class="mt-8 flex flex-col items-center gap-4">
+      <a href="/" class="flex justify-center space-x-3 md:justify-start">
+        <h1 class="flex items-center justify-center">
+          <Icon
+            name="logomark"
+            class="h-12 w-auto sm:h-20"
+            aria-label="Osaka/Kyoto Web Designers and Developers - OWDDM/KWDDM logo"
+          />
+        </h1>
+        <span
+          class="self-center font-extrabold uppercase tracking-[0.6em] text-xl"
+          >{title}</span
+        >
+      </a>
+      <div class="max-w-2xl text-center mx-auto">
+        <p class="text-base font-Futurewave">{description}</p>
+      </div>
+    </div>
+  </section>
+  <section class="my-36">
+    <div class="mx-auto max-w-7xl">
+      <BlogIndex />
+    </div>
+  </section>
+</MainLayout>

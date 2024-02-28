@@ -5,10 +5,10 @@ export default {
   theme: {
     extend: {
       fontFamily: {
-        Futurewave: ['Futurewave', 'monospace'],
-        Inter: ['Inter', 'sans-serif']
+        Futurewave: ["Futurewave", "monospace"],
+        Inter: ["Inter", "sans-serif"],
       },
     },
   },
-  plugins: [require("tw-neumorphism")],
+  plugins: [require("tw-neumorphism"), require("@tailwindcss/typography")],
 };

@@ -1,0 +1,70 @@
+.prose {
+  @apply mx-auto w-full max-w-5xl tracking-wide lg:text-xl text-gray-900;
+  line-height: 1.75em;
+}
+
+.prose > p {
+  @apply my-4 font-normal;
+}
+
+.prose > hr {
+  @apply my-8 border-gray-500;
+}
+
+.prose > h1 {
+  @apply mb-4 mt-10 text-[32px] font-normal leading-[38px] text-gray-900;
+}
+
+.prose > h2 {
+  @apply mb-4 mt-10 text-[32px] font-normal leading-[38px] text-gray-900;
+}
+
+.prose > h3 {
+  @apply mb-4 mt-10 font-normal leading-tight text-red-800 text-2xl;
+}
+
+.prose > img {
+  @apply my-16 mx-auto object-center h-auto w-full;
+}
+
+.prose strong {
+  @apply font-normal;
+}
+
+.prose ul {
+  @apply my-4 pl-8;
+}
+
+/* the ::marker selector doesn't allow customizing the spacing around the marker as easily */
+.prose ul li::before {
+  content: "";
+  /* background: url("../icons/game-icons-heart.svg") center no-repeat; */
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin-right: 8px;
+  margin-left: -18px;
+}
+
+.prose ol {
+  @apply my-16 list-inside list-decimal pl-4;
+}
+.prose ol ::marker {
+  @apply inline-block font-mono font-bold text-amber-500;
+}
+
+.prose li {
+  @apply my-2 text-sm;
+}
+
+.prose :where(a) {
+  @apply text-sky-600 hover:text-gray-200 no-underline;
+}
+
+.prose > p code {
+  @apply text-left mx-0.5 inline-block rounded-lg bg-gray-900 px-2 align-baseline leading-6 text-gray-100 text-sm;
+}
+
+.prose > pre {
+  @apply my-6 text-left rounded-md bg-gray-900 border border-gray-900 px-5 py-3 text-base text-amber-400;
+}

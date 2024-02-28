@@ -16,13 +16,13 @@ a,
 .btn {
   @apply rounded-lg p-3;
   @apply transition-colors duration-200;
-  @apply text-gray-900 hover:text-gray-300;
+  @apply text-sky-600 hover:text-gray-300;
 }
 
 .text-gradient-brand {
   @apply transition-colors duration-200;
   @apply bg-clip-text text-transparent;
-  @apply bg-gradient-to-br from-sky-500 via-red-800 to-sky-200;
+  @apply bg-gradient-to-br from-sky-800 via-stone-600 to-sky-200;
 }
 
 .text-gradient-hero {
