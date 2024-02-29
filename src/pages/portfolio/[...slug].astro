@@ -81,17 +81,22 @@ const project = Astro.props.project;
       >/{project.slug}</a
     >
   </div>
+  
   <div class="flex">
     <a class="font-Futurewave" href="/portfolio">go back</a>
   </div>
 
   <div class="prose prose-2xl">
-  {project.name}
-  {project.description}
-  {project.sourceCode}
-  {project.image.url}
-    <p
-      class="mt-5 line-clamp-3 text-sm leading-6"
+    {project.name}
+    {project.description}
+    {project.sourceCode}
+
+    <img
+      class="h-64 w-auto"
+      src={project.image[0].url}
+      alt={`${project.image[0].url}`}
+    />
+    <div
       set:html={project.content.html}
     />
   </div>
