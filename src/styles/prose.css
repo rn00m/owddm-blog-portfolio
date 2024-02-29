@@ -1,5 +1,6 @@
 .prose {
-  @apply mx-auto w-full max-w-5xl tracking-wide lg:text-xl text-gray-900;
+  @apply mx-auto w-full max-w-5xl px-6 overflow-hidden;
+  @apply text-gray-900 dark:text-gray-100;
   line-height: 1.75em;
 }
 
@@ -12,23 +13,27 @@
 }
 
 .prose > h1 {
-  @apply mb-4 mt-10 text-[32px] font-normal leading-[38px] text-gray-900;
+  @apply mb-4 mt-10 text-3xl font-normal leading-[38px];
 }
 
 .prose > h2 {
-  @apply mb-4 mt-10 text-[32px] font-normal leading-[38px] text-gray-900;
+  @apply mb-4 mt-10 font-normal text-2xl;
 }
 
 .prose > h3 {
-  @apply mb-4 mt-10 font-normal leading-tight text-red-800 text-2xl;
+  @apply mb-4 mt-10 font-normal leading-tight text-xl;
+}
+
+.prose > h4 {
+  @apply font-normal;
 }
 
 .prose > img {
-  @apply my-16 mx-auto object-center h-auto w-full;
+  @apply my-16 mx-auto object-center aspect-auto h-auto w-full;
 }
 
 .prose strong {
-  @apply font-normal;
+  @apply font-bold;
 }
 
 .prose ul {
@@ -66,5 +71,6 @@
 }
 
 .prose > pre {
-  @apply my-6 text-left rounded-md bg-gray-900 border border-gray-900 px-5 py-3 text-base text-amber-400;
+  @apply my-6 text-left rounded-md;
+  @apply bg-gray-900 border border-gray-900 py-3 text-base text-amber-400;
 }

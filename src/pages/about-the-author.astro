@@ -1,0 +1,38 @@
+---
+import { Image } from "astro:assets";
+import Avatar from "../assets/img/sunset-crop.webp";
+
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
+---
+
+<div class="py-5 max-w-4xl mx-auto">
+  <div class="container" id="avatar">
+    <div class="grid py-3 pt-1">
+      <div>
+        <Image
+          src={Avatar}
+          class="aspect-auto rounded-full mx-auto max-w-72"
+          loading="eager"
+          alt="Hayao Miyazaki"
+          sizes={sizes}
+        />
+      </div>
+    </div>
+    <div class="max-w-2xl mx-auto py-16">
+      <p class="text-center font-Futurewave">
+        Hayao Miyazaki (宮崎駿, born January 5, 1941) is a Japanese film
+        director, producer, screenwriter, animator, author, manga artist, and
+        co-founder of Studio Ghibli.
+      </p>
+    </div>
+    <div class="py-3 pb-1">
+      <div>
+        <img
+          src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
+          class="aspect-auto mx-auto max-w-72"
+          alt="Studio Ghibli logo"
+        />
+      </div>
+    </div>
+  </div>
+</div>

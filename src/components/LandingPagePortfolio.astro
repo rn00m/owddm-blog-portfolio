@@ -14,17 +14,18 @@ const response = await fetch(
     body: JSON.stringify({
       query: `
         {
-          posts (first: 3) {
-            title
-            description
+          projects (first: 3) {
+            name
             slug
-            date
-            content {
-                html
-            }
+            description
             tags
-            authors {
-                name
+            content {
+              html
+            }
+            demo
+            sourceCode
+            image {
+              url
             }
           }
         }
@@ -32,7 +33,7 @@ const response = await fetch(
     }),
   }
 );
-const posts = await response.json();
+const projects = await response.json();
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
@@ -41,30 +42,28 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
     class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 columns-3"
   >
     {
-      posts.data.posts.map((post) => (
+      projects.data.projects.map((project) => (
         <li>
-          <div class="px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg dark:nm-flat-gray-800-lg dark:hover:nm-flat-gray-700-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
+          <div class="p-8 px-3 pb-12 pt-3 nm-flat-sky-100-lg hover:nm-flat-stone-100-lg dark:nm-flat-gray-700-lg dark:hover:dark:nm-flat-gray-800-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg text-center max-w-sm w-full">
             <article class="flex max-w-xl flex-col items-start justify-between">
               <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                <time datetime="2024-03-16" class="">
-                  {post.date}
-                </time>
+                <h4 class="">TAGS :</h4>
                 <a
-                  href={`/blog/${post.slug}`}
+                  href={`/portfolio/${project.slug}`}
                   class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100"
                 >
-                  {post.tags[0]}
+                  {project.tags[0]}
                 </a>
               </div>
               <div class="mt-4">
                 <h3 class="mt-3 text-lg line-clamp-1 font-semibold leading-6 font-Futurewave">
-                  <a href={`/blog/${post.slug}`} class="text-sky-600">
+                  <a href={`/portfolio/${project.slug}`}>
                     <span class="absolute inset-0" />
-                    {post.slug}
+                    {project.slug}
                   </a>
                 </h3>
                 <p class="mt-5 line-clamp-3 text-sm leading-6">
-                  {post.description}
+                  {project.description}
                 </p>
               </div>
 
@@ -75,13 +74,15 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
                   <div class="flex items-center justify-center">
                     <Icon
                       name="masscomMediaLogo"
-                      class="h-8 w-auto rounded border-2 border-white/50 hover:bg-sky-500 sm:h-10 lg:h-12 bg-sky-100"
+                      class="h-8 w-auto rounded border-2 border-white/50 bg-sky-500 sm:h-10 lg:h-12 transition duration-300"
                       aria-label="MassCom Media logo"
                     />
                   </div>
                   <span class="self-center font-Futurewave text-xs">
                     <>
-                      <a href="/me-myself-and-i" class="text-sky-600 tracking-widest">{post.authors[0].name}</a>
+                      <a href="/" class="tracking-widest">
+                        masscom
+                      </a>
                       <br />
                       <span class="text-gradient-brand font-extrabold uppercase tracking-[0.6em]">
                         owddm
@@ -98,10 +99,8 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
   </div>
 </ul>
 
-<p class="text-center sm:text-right text-sm font-Futurewave my-2"class="text-right text-sm font-Futurewave">
-  <span class="font-heading leading-9 text-2xl">"</span>
-  <span class="font-heading leading-9 text-sm"
-    >Of all the blogs, in all of the cloud, you had to walk into mine!</span
+<p class="text-center sm:text-right text-sm font-Futurewave py-4">
+  <span class="font-heading leading-4 text-sm"
+    >I am a Jack of all Trades, but a Master in getting the job done!</span
   >
-  <span class="font-heading leading-9 text-2xl">"</span>
 </p>
