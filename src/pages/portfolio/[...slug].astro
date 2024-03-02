@@ -76,15 +76,13 @@ const project = Astro.props.project;
   <TextArticle />
   <section class="my-24">
     <div class="flex text-xs md:text-xl font-Futurewave">
-      <a class="" href="/">home</a>
-      <a class="" href="/portfolio">/portfolio</a>
-      <a class="" href={`/portfolio/${project.slug}`}>/{project.slug}</a>
+      <a href="/">home</a>
+      <a href="/portfolio">/portfolio</a>
+      <a href={`/portfolio/${project.slug}`}>/{project.slug}</a>
     </div>
-
-    <div class="flex">
-      <a class="font-Futurewave" href="/portfolio">go back to index</a>
+    <div class="font-Futurewave">
+      <a href="/portfolio">go back to index</a>
     </div>
-
     <div
       class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"
     >
