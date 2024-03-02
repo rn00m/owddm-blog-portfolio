@@ -1,0 +1,40 @@
+---
+import MainLayout from "../layouts/MainLayout.astro";
+import { Image } from "astro:assets";
+import Avatar from "../assets/img/sunset-crop.webp";
+import TextCredits from "../components/TextCredits.astro";
+
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
+---
+
+<MainLayout title="Credits" description="credits">
+  <TextCredits />
+
+  <div class="py-5 max-w-4xl mx-auto">
+    <div class="container" id="avatar">
+      <div class="max-w-2xl mx-auto py-16">
+        <div class="py-3 pb-1">
+          <div>
+            <img
+              src="https://upload.wikimedia.org/wikipedia/en/thumb/c/ca/Studio_Ghibli_logo.svg/1200px-Studio_Ghibli_logo.svg.png"
+              class="aspect-auto mx-auto max-w-72"
+              alt="Studio Ghibli logo"
+            />
+          </div>
+        </div>
+
+        <p class="text-center font-Futurewave">
+          No credits or attribution were required to make this workshop project.
+          But they will be credited nevertheless! <span
+            ><a
+              href="https://masscom.media/"
+              class="font-Futurewave"
+              title="A Masscom Media Project"
+              target="_blank">A Masscom Media Project</a
+            ></span
+          >
+        </p>
+      </div>
+    </div>
+  </div>
+</MainLayout>

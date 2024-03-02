@@ -74,36 +74,32 @@ const project = Astro.props.project;
 
 <ProjectLayout title={project.name}>
   <TextArticle />
-  <div class="flex text-xs md:text-xl font-Futurewave">
-    <a class="" href="/">home</a>
-    <a class="" href="/portfolio">/portfolio</a>
-    <a class="" href={`/portfolio/${project.slug}`}
-      >/{project.slug}</a
-    >
-  </div>
-
-  <div class="flex">
-    <a class="font-Futurewave" href="/portfolio">go back</a>
-  </div>
-
-  <div
-    class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"
-  >
-    <h1>{project.name}</h1>
-
-    <h4 class="text-lg">Key Take-Away</h4>{project.description}
-
-    <img
-      class="h-64 w-auto"
-      src={project.image[0].url}
-      alt={`${project.image[0].url}`}
-    />
-
-    <div set:html={project.content.html} />
-
-    <h3>Credits | sourceCode</h3>
-    <div class="text-sm">
-      <a href={project.sourceCode} target="_blank">{project.sourceCode}</a>
+  <section class="my-24">
+    <div class="flex text-xs md:text-xl font-Futurewave">
+      <a class="" href="/">home</a>
+      <a class="" href="/portfolio">/portfolio</a>
+      <a class="" href={`/portfolio/${project.slug}`}>/{project.slug}</a>
     </div>
-  </div>
+
+    <div class="flex">
+      <a class="font-Futurewave" href="/portfolio">go back to index</a>
+    </div>
+
+    <div
+      class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"
+    >
+      <h1>{project.name}</h1>
+      <h4 class="text-lg">Key Take-Away</h4>{project.description}
+      <img
+        class="h-64 w-auto"
+        src={project.image[0].url}
+        alt={`${project.image[0].url}`}
+      />
+      <div set:html={project.content.html} />
+      <h3>Credits | sourceCode</h3>
+      <div class="text-sm">
+        <a href={project.sourceCode} target="_blank">{project.sourceCode}</a>
+      </div>
+    </div>
+  </section>
 </ProjectLayout>
