@@ -84,29 +84,60 @@ const post = Astro.props.post;
 
 <BlogLayout title={post.title}>
   <TextArticle />
-  <section class="my-24">
+  <section class="max-w-7xl mx-auto my-24">
     <div class="flex">
       <a class="font-Futurewave" href="/">home</a>
       <a class="font-Futurewave" href="/blog">/blog</a>
       <a class="font-Futurewave" href={`/blog/${post.slug}`}>/{post.slug}</a>
     </div>
     <div class="flex">
-      <a class="font-Futurewave" href="/blog">go back</a>
+      <a class="font-Futurewave" href="/blog">go back to index</a>
     </div>
-    <div class="prose prose-2xl">
+  </section>
+  <section>
+    
+    {post.title}
+    {post.description}
+    {post.tags}
+    {post.date}
+    {post.coverImage.url}
+    {post.content.html}
+    {post.authors[0].name}
+    {post.authors[0].intro}
+    {post.authors[0].picture.url}
+
+    <div class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave">
+      <h1>This is the title</h1>
       {post.title}
+
+      <h2> This is the description</h2>
       {post.description}
-      {post.tags}
+
+      <h3>These are tags</h3>
+      {post.tags[0]}
+      {post.tags[1]}
+      {post.tags[2]}
+
+      <h3><time>This is the date</time></h3>
       {post.date}
 
+      <h3>The main image</h3>
       <img
         class="h-64 w-auto" src={post.coverImage.url} />
+      
+      <h3>Main content</h3>
       <p
         class="mt-5 line-clamp-3 text-sm leading-6"
         set:html={post.content.html}
       />
+
+      <h3>Author name</h3>
       {post.authors[0].name}
+
+      <h3>Author intro</h3>
       {post.authors[0].intro}
+
+      <h3>Author image</h3>
       <img
         class="h-16 w-16" src={post.authors[0].picture.url} />
     </div>
