@@ -1,20 +1,21 @@
 ---
 import { Image } from "astro:assets";
-//import RyuHero from "../assets/img/goldDragonRed.webp";
+import RyuHero from "../assets/img/goldDragonRed.webp";
 import Avatar from "../assets/img/sunset-crop.webp";
 
 const props = Astro.props;
-//const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
+const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <section id="hero" class="h-full">
-  <img
-    src="/img/goldDragonRed.webp"
+  <Image
+    src={RyuHero}
     alt="A magnificent Asian golden dragon encircled by crimson-gold blossoms."
     loading="eager"
     class="absolute object-cover h-screen aspect-auto"
     width={1920}
     height={1076}
+    sizes={sizes}
   />
 
   <div
@@ -30,7 +31,7 @@ const props = Astro.props;
                   src={Avatar}
                   alt="Selfie"
                   loading="eager"
-                  class="rounded-full w-72 h-72 object-center mx-auto aspect-auto"
+                  class="rounded-full w-60 h-60 object-center mx-auto aspect-auto"
                   width={1020}
                   height={1020}
                 />
@@ -53,7 +54,7 @@ const props = Astro.props;
               >
             </h1>
             <h2
-              class="text-gradient-hero text-sm sm:text-xl font-semibold uppercase tracking-widest sm:text-right"
+              class="text-gradient-hero text-sm font-semibold uppercase tracking-widest sm:text-right"
             >
               March 23<span class="text-sm">rd</span>:2024
             </h2>
