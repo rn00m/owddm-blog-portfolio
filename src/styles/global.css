@@ -1,27 +1,25 @@
 @font-face {
-  font-family: 'Futurewave';
-  src: local(''),
-    url('../fonts/Futurewave.otf') format('opentype'),
-    url('../fonts/Futurewave.ttf') format('truetype');
+  font-family: "Futurewave";
+  src: local(""), url("../fonts/Futurewave.otf") format("opentype"),
+    url("../fonts/Futurewave.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
 }
 
 body {
-  font-family: 'Inter Variable', sans-serif;
-  font-weight: 400;
+  font-family: "Inter Variable", sans-serif;
+  font-weight: 600;
 }
-a {
+a,
+.btn {
   @apply rounded-lg p-3;
   @apply transition-colors duration-200;
   @apply text-amber-600 hover:text-gray-300;
 }
 
 .btn {
-  @apply rounded-lg p-3 mx-4;
-  @apply transition-colors duration-200;
-  @apply text-gray-800 hover:text-gray-50;
+  @apply rounded-lg mx-4;
   @apply border-2 border-current px-2 py-1 sm:px-6 sm:py-4;
 }
 
