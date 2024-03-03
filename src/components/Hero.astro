@@ -20,32 +20,50 @@ const props = Astro.props;
   <div
     class="relative grid h-screen place-items-center bg-red-800/80 dark:bg-gray-800/90 p-6"
   >
-    <div class="items-center px-0 sm:px-6 flex flex-col-reverse gap-12">
-      <div>
-        <div class="text-center">
-          <h1
-            class="font-Futurewave text-xs sm:text-xl text-gray-400 dark:text-white"
-          >
-            an <span
-              class="text-sm sm:text-4xl font-extrabold font-Futurewave text-gradient-hero"
-              >OWDDM
-            </span>Workshop<br />with<span
-              class="text-sm sm:text-2xl font-extrabold font-Futurewave"
+    <div class="container-fluid py-5 bg-faded min-h-full">
+      <div class="container">
+        <div class="py-3 pt-1 object-center">
+          <div class="grid-cols-1">
+            <div id="avatar">
+              <div class="overflow-hidden aspect-auto">
+                <Image
+                  src={Avatar}
+                  alt="Selfie"
+                  loading="eager"
+                  class="rounded-full w-72 h-72 object-center mx-auto aspect-auto"
+                  width={1020}
+                  height={1020}
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row py-3">
+          <div class="text-center">
+            <h1
+              class="font-Futurewave text-xs sm:text-xl text-gray-400 dark:text-white"
             >
-              Romano Moesa</span
+              an <span
+                class="text-sm sm:text-4xl font-extrabold font-Futurewave text-gradient-hero"
+                >OWDDM
+              </span>Workshop<br />with<span
+                class="text-sm sm:text-2xl font-extrabold font-Futurewave"
+              >
+                Romano Moesa</span
+              >
+            </h1>
+            <h2
+              class="text-gradient-hero text-sm sm:text-xl font-semibold uppercase tracking-widest sm:text-right"
             >
-          </h1>
-          <h2
-            class="text-gradient-hero text-sm sm:text-xl font-semibold uppercase tracking-widest sm:text-right"
-          >
-            March 23<span class="text-sm">rd</span>:2024
-          </h2>
-          <p
-            class="mt-6 max-w-xl mx-auto leading-7 text-gradient-hero font-Futurewave text-xs sm:text-base"
-          >
-            Learn how to create a blog & portfolio in Astro and Tailwind CSS
-            with HyGraph as a headless CMS.
-          </p>
+              March 23<span class="text-sm">rd</span>:2024
+            </h2>
+            <p
+              class="mt-6 max-w-xl mx-auto leading-7 text-gradient-hero font-Futurewave text-xs sm:text-base"
+            >
+              Learn how to create a blog & portfolio in Astro and Tailwind CSS
+              with HyGraph as a headless CMS.
+            </p>
+          </div>
         </div>
         <div
           class="flex justify-center space-x-1 sm:space-x-5 my-4 lg:my-10 font-Futurewave"
@@ -87,18 +105,6 @@ const props = Astro.props;
             </svg>
             <span class="text-xs sm:text-base">Website</span>
           </a>
-        </div>
-      </div>
-      <div id="avatar">
-        <div class="overflow-hidden aspect-auto">
-          <Image
-            src={Avatar}
-            alt="Selfie"
-            loading="eager"
-            class="rounded-full w-60 h-60 sm:w-72 sm:h-72"
-            width={1020}
-            height={1020}
-          />
         </div>
       </div>
     </div>
