@@ -80,8 +80,9 @@ const project = Astro.props.project;
       <a href="/portfolio">/portfolio</a>
       <a href={`/portfolio/${project.slug}`}>/{project.slug}</a>
     </div>
-    <div class="font-Futurewave">
-      <a href="/portfolio">go back to index</a>
+    <div class="flex">
+      <a class="font-Futurewave btn" href="/portfolio">go back</a>
+      <a class="font-Futurewave btn" href="/blog">go to blog</a>
     </div>
     <div
       class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"

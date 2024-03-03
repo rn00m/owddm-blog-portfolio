@@ -79,35 +79,39 @@ export async function getStaticPaths() {
 
   return paths;
 }
+
 const post = Astro.props.post;
 ---
 
 <BlogLayout title={post.title}>
   <TextArticle />
   <section class="max-w-7xl mx-auto my-24">
-    <div class="flex">
+    <div class="flex text-xs sm:text-base">
       <a class="font-Futurewave" href="/">home</a>
       <a class="font-Futurewave" href="/blog">/blog</a>
       <a class="font-Futurewave" href={`/blog/${post.slug}`}>/{post.slug}</a>
     </div>
     <div class="flex">
-      <a class="font-Futurewave" href="/blog">go back to index</a>
+      <a class="font-Futurewave btn" href="/blog">go back</a>
+      <a class="font-Futurewave btn" href="/portfolio">go to portfolio</a>
     </div>
   </section>
   <section>
-    
+    <div class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave">
+      <h2>This is how data is fetched</h2>
+    </div>
     {post.title}
     {post.description}
     {post.tags}
     {post.date}
-    {post.coverImage.url}
+    <!--{post.coverImage.url}-->
     {post.content.html}
     {post.authors[0].name}
     {post.authors[0].intro}
-    {post.authors[0].picture.url}
+    <!--{post.authors[0].picture.url}-->
 
     <div class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave">
-      <h1>This is the title</h1>
+      <h2>This is the title</h2>
       {post.title}
 
       <h2> This is the description</h2>
