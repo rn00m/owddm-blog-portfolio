@@ -33,7 +33,6 @@ const response = await fetch(
   }
 );
 const posts = await response.json();
-const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 ---
 
 <ul class="mx-auto mt-10 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 border-t border-sky-500 pt-10 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3 columns-3">
@@ -43,7 +42,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
           <div class="px-3 pb-12 pt-3 nm-flat-stone-100-lg hover:nm-flat-sky-100-lg dark:nm-flat-gray-800-lg dark:hover:nm-flat-gray-700-lg transition duration-200 ease-in-out transform hover:scale-110 rounded-lg p-8 text-center max-w-sm w-full">
             <article class="flex max-w-xl flex-col items-start justify-between">
               <div class="flex items-center gap-x-4 text-xs font-Futurewave">
-                <time datetime="2024-03-16" class="">
+                <time datetime="2024-02-27">
                   {post.date}
                 </time>
                 <a
@@ -95,9 +94,7 @@ const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";
 </ul>
 
 <p class="text-center sm:text-right text-sm font-Futurewave my-2"class="text-right text-sm font-Futurewave">
-  <span class="font-heading leading-9 text-2xl">"</span>
   <span class="font-heading leading-9 text-sm"
     >Of all the blogs, in all of the cloud, you had to walk into mine!</span
   >
-  <span class="font-heading leading-9 text-2xl">"</span>
 </p>
