@@ -18,6 +18,10 @@ const { title, description } = Astro.props;
   <meta name="generator" content={Astro.generator} />
   <title>{title}</title>
   <meta name="description" content={description} />
+  <!-- bfcache -->
+  <meta http-equiv="Pragma" content="no-cache" />
+  <meta http-equiv="Cache-Control" content="no-cache" />
+  <meta http-equiv="Expires" content="0" />
   <!-- open graph -->
   <meta property="og:title" content={title} />
   <meta property="og:locale" content="en_US" />
