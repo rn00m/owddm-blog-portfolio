@@ -96,8 +96,11 @@ const post = Astro.props.post;
       <a class="font-Futurewave btn" href="/portfolio">go to portfolio</a>
     </div>
   </section>
+
   <section>
-    <div class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave">
+    <div
+      class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-p:text-yellow-300 prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"
+    >
       <h2>This is how data is fetched</h2>
     </div>
     {post.title}
@@ -110,11 +113,14 @@ const post = Astro.props.post;
     {post.authors[0].intro}
     <!--{post.authors[0].picture.url}-->
 
-    <div class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave">
+    <div
+      class="prose dark:prose-invert prose-headings:underline prose-headings:font-Futurewave
+"
+    >
       <h2>This is the title</h2>
       {post.title}
 
-      <h2> This is the description</h2>
+      <h2>This is the description</h2>
       {post.description}
 
       <h3>These are tags</h3>
@@ -126,9 +132,8 @@ const post = Astro.props.post;
       {post.date}
 
       <h3>The main image</h3>
-      <img
-        class="h-64 w-auto" src={post.coverImage.url} />
-      
+      <img class="h-64 w-auto" src={post.coverImage.url} />
+
       <h3>Main content</h3>
       <p
         class="mt-5 line-clamp-3 text-sm leading-6"
@@ -142,8 +147,7 @@ const post = Astro.props.post;
       {post.authors[0].intro}
 
       <h3>Author image</h3>
-      <img
-        class="h-16 w-16" src={post.authors[0].picture.url} />
+      <img class="h-16 w-16" src={post.authors[0].picture.url} />
     </div>
   </section>
 </BlogLayout>

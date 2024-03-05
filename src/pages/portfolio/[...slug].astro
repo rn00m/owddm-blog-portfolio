@@ -83,8 +83,9 @@ const project = Astro.props.project;
       <a class="font-Futurewave btn" href="/portfolio">go back</a>
       <a class="font-Futurewave btn" href="/blog">go to blog</a>
     </div>
+    {project.content.html}
     <div
-      class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"
+      class="prose dark:prose-invert prose-headings:underline prose-headings:font-Futurewave prose-inline-code:rounded prose-inline-code:border"
     >
       <h1>{project.name}</h1>
       <h4 class="text-lg">Key Take-Away</h4>{project.description}

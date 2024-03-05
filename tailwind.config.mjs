@@ -1,4 +1,7 @@
+const plugin = require("tailwindcss/plugin");
+
 /** @type {import('tailwindcss').Config} */
+
 export default {
   darkMode: "selector",
   content: ["./src/**/*.{astro,html,js,jsx,md,mdx,svelte,ts,tsx,vue}"],
@@ -9,6 +12,16 @@ export default {
         Inter: ["Inter", "sans-serif"],
       },
     },
+
   },
-  plugins: [require("tw-neumorphism"), require("@tailwindcss/typography")],
+  plugins: [
+    require("tw-neumorphism"),
+    require("@tailwindcss/typography"),
+    plugin(function ({ addVariant }) {
+      addVariant(
+        "prose-inline-code",
+        '&.prose :where(:not(pre)>code):not(:where([class~="not-prose"] *))'
+      );
+    }),
+  ],
 };
