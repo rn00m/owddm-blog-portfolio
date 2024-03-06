@@ -101,13 +101,13 @@ const post = Astro.props.post;
     <div
       class="prose dark:prose-invert prose-h1:font-bold prose-h1:text-xl prose-a:text-blue-600 prose-p:text-justify prose-p:text-yellow-300 prose-img:rounded-xl prose-headings:underline prose-headings:font-Futurewave"
     >
-      <h2>This is how data is fetched</h2>
+      <h2>Fetching the data</h2>
     </div>
     {post.title}
     {post.description}
     {post.tags}
     {post.date}
-    <!--{post.coverImage.url}-->
+    {post.coverImage.url}
     {post.content.html}
     {post.authors[0].name}
     {post.authors[0].intro}
