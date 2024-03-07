@@ -30,17 +30,14 @@ interface Props {
 }
 
 export async function getStaticPaths() {
-  const response = await fetch(
-    `${import.meta.env.HYGRAPH_ENDPOINT}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-        //Authorization: `Bearer ${import.meta.env.HYGRAPH_TOKEN}`,
-      },
-      body: JSON.stringify({
-        query: `
+  const response = await fetch(`${import.meta.env.HYGRAPH_ENDPOINT}`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({
+      query: `
         {
           posts {
             title
@@ -64,9 +61,8 @@ export async function getStaticPaths() {
           }
         }
       `,
-      }),
-    }
-  );
+    }),
+  });
   const posts = await response.json();
   const paths = posts.data.posts.map((post) => ({
     params: {
@@ -103,19 +99,21 @@ const post = Astro.props.post;
     >
       <h2>Fetching the data</h2>
     </div>
-    {post.title}
-    {post.description}
-    {post.tags}
-    {post.date}
-    {post.coverImage.url}
-    {post.content.html}
-    {post.authors[0].name}
-    {post.authors[0].intro}
-    <!--{post.authors[0].picture.url}-->
+
+    <div class="overflow-hidden">
+      {post.title}
+      {post.description}
+      {post.tags}
+      {post.date}
+      {post.coverImage.url}
+      {post.content.html}
+      {post.authors[0].name}
+      {post.authors[0].intro}
+      <!--{post.authors[0].picture.url}-->
+    </div>
 
     <div
-      class="prose dark:prose-invert prose-headings:underline prose-headings:font-Futurewave
-"
+      class="prose dark:prose-invert prose-headings:underline prose-headings:font-Futurewave"
     >
       <h2>This is the title</h2>
       {post.title}

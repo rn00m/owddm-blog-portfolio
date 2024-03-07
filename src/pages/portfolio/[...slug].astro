@@ -30,7 +30,6 @@ export async function getStaticPaths() {
     headers: {
       "Content-Type": "application/json",
       Accept: "application/json/",
-      //Authorization: `Bearer ${import.meta.env.HYGRAPH_TOKEN}`,
     },
     body: JSON.stringify({
       query: `
