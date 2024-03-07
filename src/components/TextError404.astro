@@ -1,0 +1,69 @@
+---
+import IntroSection from "./IntroSection.astro";
+import { Icon } from "astro-icon/components";
+
+const { title = "Error Page" } = Astro.props;
+---
+
+<IntroSection title={title} id="404">
+  <Fragment slot="lead">
+    <div class="font-Futurewave">
+      yeah baby <span class="text-3xl tracking-widest font-Inter text-amber-600"
+        >|</span
+      > You just hit an {title}:<br />known as:<br />
+    </div>
+    <div
+      class="text-7xl sm:text-9xl tracking-widest font-Inter border-4 border-red-800 my-12 p-10 text-center"
+    >
+      404
+    </div>
+    <div
+      class="flex justify-center space-x-1 sm:space-x-5 my-8 lg:my-16 font-Futurewave"
+    >
+      <a
+        href="/"
+        target="_blank"
+        class="flex items-center justify-center gap-3 border-2 border-current px-2 py-1 sm:px-6 sm:py-4 text-red-800"
+      >
+        <Icon
+          name="buttons/mdi-pill"
+          class="h-10 md:h-12 w-auto rounded text-red-800 hover:text-red-950"
+          aria-label="Red Pill"
+        /><span class="text-xs sm:text-base">Red</span></a
+      >
+      <a
+        href="/"
+        class="flex items-center justify-center gap-3 border-2 border-current px-2 py-1 sm:px-6 sm:py-4 text-blue-800"
+        target="_blank"
+      >
+        <Icon
+          name="buttons/mdi-pill"
+          class="h-10 md:h-12 w-auto rounded text-blue-800 hover:text-blue-950"
+          aria-label="Blue Pill"
+        />
+        <span class="text-xs sm:text-base">Blue</span>
+      </a>
+    </div>
+    <p
+      class="text-center text-xl md:text-7xl lg:text-8xl xl:text-9xl font-Futurewave"
+    >
+      Red Pill, Blue Pill, does it matter ? They both go to the HomePage !<br />
+      <span class="leading-9 text-xl tracking-widest"
+        >いらっしゃいませ,<span class="text-3xl"> guest</span>you are just as
+        lost as me!</span
+      >
+    </p>
+    <p class="text-center text-xs font-Futurewave">
+      <br />
+      Either delete this component and make your own <span
+        class="font-Inter text-xl tracking-widest"
+      >
+        404
+      </span>page!
+      <br />
+      <span class="leading-9 text-xs"
+        >or keep it and try to make something of your own!</span
+      >
+    </p>
+  </Fragment>
+</IntroSection>
