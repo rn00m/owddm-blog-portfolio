@@ -15,8 +15,8 @@ body {
 a,
 .btn {
   @apply rounded-lg p-3;
-  @apply transition-colors duration-200;
-  @apply text-amber-600 hover:text-gray-300;
+  @apply transition-colors duration-100;
+  @apply hover:text-sky-200;
 }
 
 .btn {
