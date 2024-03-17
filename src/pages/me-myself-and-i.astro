@@ -1,18 +1,17 @@
 ---
 import MainLayout from "../layouts/MainLayout.astro";
 import IntroSection from "../components/IntroSection.astro";
+import RyuHero from "../assets/img/goldDragonRed.webp";
 import { slide } from "astro:transitions";
 
-const response = await fetch(
-  `${import.meta.env.HYGRAPH_ENDPOINT}`,
-  {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      Accept: "application/json",
-    },
-    body: JSON.stringify({
-      query: `
+const response = await fetch(`${import.meta.env.HYGRAPH_ENDPOINT}`, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+    Accept: "application/json",
+  },
+  body: JSON.stringify({
+    query: `
         {
           authors {
             name
@@ -28,9 +27,8 @@ const response = await fetch(
           }
         }
       `,
-    }),
-  }
-);
+  }),
+});
 const authors = await response.json();
 const props = Astro.props;
 const sizes = "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw";

@@ -3,6 +3,8 @@
 
 import TextArticle from "../../components/TextArticle.astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
+// utils import
+import { formatDate } from "../../js/utils";
 
 interface Post {
   title: string;
@@ -122,12 +124,12 @@ const post = Astro.props.post;
       {post.description}
 
       <h3>These are tags</h3>
-      {post.tags[0]}
-      {post.tags[1]}
-      {post.tags[2]}
 
-      <h3><time>This is the date</time></h3>
-      {post.date}
+      {post.tags.map((tagItem) => <p>{tagItem}</p>)}
+
+      <h3>This is the published date</h3>
+      <time>Formatted: {formatDate(post.date)}</time>
+      <p>Without format: {post.date}</p>
 
       <h3>The main image</h3>
       <img class="h-64 w-auto" src={post.coverImage.url} />
@@ -149,3 +151,4 @@ const post = Astro.props.post;
     </div>
   </section>
 </BlogLayout>
+

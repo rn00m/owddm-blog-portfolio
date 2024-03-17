@@ -9,10 +9,10 @@ export default {
     extend: {
       fontFamily: {
         Futurewave: ["Futurewave", "monospace"],
+        Zen: ["Zen Kaku Gothic New", "sans-serif"],
         Inter: ["Inter", "sans-serif"],
       },
     },
-
   },
   plugins: [
     require("tw-neumorphism"),
