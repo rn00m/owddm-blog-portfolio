@@ -3,7 +3,7 @@
 import "../styles/index.css";
 // Supports weights 100-900
 import "@fontsource-variable/inter";
-import '@fontsource/zen-kaku-gothic-new';
+import "@fontsource/zen-kaku-gothic-new";
 
 import { ViewTransitions } from "astro:transitions";
 
@@ -53,8 +53,11 @@ const { title, description } = Astro.props;
     setMode();
     document.addEventListener("astro:after-swap", setMode);
   </script>
-  <!-- 
-  <script defer src="https://eu.umami.is/script.js" data-website-id="a365d69a-db96-4c37-817e-6982c2d09147"></script>
-  -->
+  <!-- -->
+  <script
+    defer
+    src="https://eu.umami.is/script.js"
+    data-website-id="a365d69a-db96-4c37-817e-6982c2d09147"></script>
+
   <ViewTransitions />
 </head>
