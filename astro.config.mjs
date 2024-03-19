@@ -9,6 +9,6 @@ export default defineConfig({
   site:
     process.env.NODE_ENV === "development"
       ? "http://localhost:4321"
-      : "https://owddm.masscom.media",
+      : "https://owddm-workshop.netlify.app/",
   integrations: [tailwind(), sitemap(), icon()],
 });
