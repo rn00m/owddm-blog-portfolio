@@ -3,12 +3,29 @@
 
 import TextArticle from "../../components/TextArticle.astro";
 import BlogLayout from "../../layouts/BlogLayout.astro";
-
-// Typescript import
-import type { Post } from "../../types";
-
 // utils import
 import { formatDate } from "../../js/utils";
+
+interface Post {
+  title: string;
+  description: string;
+  slug: string;
+  date: string;
+  content: {
+    html: string;
+  };
+  tags: string[];
+  coverImage: {
+    url: string;
+  };
+  authors: {
+    name: string;
+    intro: string;
+    picture: {
+      url: string;
+    };
+  }[];
+}
 
 interface Props {
   post: Post;

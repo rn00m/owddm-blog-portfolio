@@ -42,17 +42,6 @@
   @apply my-4 pl-8;
 }
 
-/* the ::marker selector doesn't allow customizing the spacing around the marker as easily */
-.prose ul li::before {
-  content: "";
-  background: url("../icons/mushroom.svg") center no-repeat;
-  display: inline-block;
-  width: 10px;
-  height: 10px;
-  margin-right: 8px;
-  margin-left: -18px;
-}
-
 .prose ol {
   @apply my-16 list-inside list-decimal pl-4;
 }
@@ -74,5 +63,5 @@
 
 .prose > pre {
   @apply my-6 text-left rounded-md;
-  @apply bg-gray-100 border border-gray-900 py-3 text-base text-amber-400;
+  @apply border-sky-500 bg-transparent py-3 text-base text-amber-400;
 }

@@ -6,7 +6,8 @@ export interface Post {
     content: {
         html: string;
     };
-    tags: string[];
+    tags: string;
+    map: string;
     coverImage: {
         url: string;
     };
@@ -16,5 +17,6 @@ export interface Post {
         picture: {
             url: string;
         };
-    }[];
+    };
+    createdAt: string;
 }

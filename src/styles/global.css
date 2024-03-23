@@ -1,7 +1,7 @@
 @font-face {
   font-family: "Futurewave";
-  src: local(""), url("../fonts/Futurewave.otf") format("opentype"),
-    url("../fonts/Futurewave.ttf") format("truetype");
+  src: local(""), url("/fonts/Futurewave.otf") format("opentype"),
+    url("/fonts/Futurewave.ttf") format("truetype");
   font-weight: normal;
   font-style: normal;
   font-display: swap;
