@@ -1,11 +1,13 @@
 # Astro, HyGraph, Tailwind CSS Blog-Portfolio
 
+## If you spot any errors or it could be done better, please do let me know!
+
 ## Features
 - Simple starter project
 - No complexed coding, pretty straighforward for starters.
-- 💨 Tailwind CSS for styling
-- Astro-icon for easy access and use of "https://iconify.design" icons.
-- tw-neumorphism for some shadow and highlighting of cards 
+- [NPM] Tailwind CSS for styling
+- [NPM] Astro-icon for easy access and use of "https://iconify.design" icons.
+- [NPM] tw-neumorphism for some shadow and highlighting of cards 
 - 🌙 Dark mode
 - 📱 Responsive (layout, images, Tailwind Typography (prose))
 - ♿ Accessible (as measured by https://web.dev/measure/)
@@ -13,7 +15,7 @@
 - Lighthouse score 99/100 (Chrome Lighthouse)
 - 🔗 Open Graph tags for social media sharing
 - Making use of .env (security wise)
-- Astro/Sitemap with automatic robots.txt
+- [NPM] Astro/Sitemap with automatic robots.txt
 - API connection with HyGraph
 
 
@@ -33,34 +35,34 @@ Inside of your Astro project, you'll see the following folders and files (only m
 /
 ├── public/
 │   └── fonts/
-│       ├── Futurewave.ttf
-│       ├── favicon.svg
+│   │   ├── Futurewave.ttf
+│   │   ├── favicon.svg
 ├── src/
 │   └── assets/*
 │   └── components/*
 │   └── icons/*
 │   └── js/
-│       └── utils.js
+│   │   └── utils.js
 │   └── layouts/
-│       ├── BlogLayout.astro
-│       ├── MainLayout.astro
-│       └── ProjectLayout.astro
+│   │   ├── BlogLayout.astro
+│   │   ├── MainLayout.astro
+│   │   └── ProjectLayout.astro
 │   └── pages/
 │       └── blog/
-│           ├── [...slug].astro
-│           └── index.astro
+│       │   ├── [...slug].astro
+│       │   └── index.astro
 │       └── portfolio/
-│           ├── [...slug].astro
-│           └── index.astro
+│       │   ├── [...slug].astro
+│       │   └── index.astro
 │   ├── 404.astro
 │   ├── credits.astro
 │   ├── index.astro
 │   ├── me-myself-and-i.astro
 │   ├── robots.txt.ts
 │   └── styles/
-│       ├── frc.css
-│       ├── index.css
-│       └── global.css
+│   │   ├── frc.css
+│   │   ├── index.css
+│   │   └── global.css
 │   ├── env.d.ts
 │   └── types.ts
 ├── .env
