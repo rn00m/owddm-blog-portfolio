@@ -19,7 +19,7 @@
 - API connection with HyGraph
 
 
-When the project is downloaded and opened in example VS Code, open a terminal and start with below command:
+When the project is downloaded and opened in example VS Code, open a terminal and start with below command, see all commands further down:
 
 ```sh
 npm install
