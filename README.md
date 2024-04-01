@@ -90,9 +90,31 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## 👀 HyGraph and .env variables (for security!)
+In the project an example is created, for starters to learn.
+
 In the .env file in the root replace the example keys with your own which you will find in your HyGraph account. You can get it from the HyGraph account.
 
+API endpoint: Project settings > API access > Endpoints (copy/paste)
+- Use either the "Content API" or the "High Performance Content API", your choice.
+
+API Token: Project settings > API access > Permanent Auth Tokens (create/add token any name can be used)
+
+In the .env file paste the token and endpoint, example below:
+HYGRAPH_ENDPOINT=https://api-ap-northeast-1.hygraph.com/v2/xxxxxxxxxxxx/master
+HYGRAPH_TOKEN=whateverTokenThatGotCreatedComesHereAndDoNotUseSpacesYesIKnowAPersonWhomUsedSpacesForBetterReadablity!!!DoNotDoThat!!!
+
+Always remember the to check the .gitignore that the .env is listed (see example), because you do not want any API listed on GIT, some exceptions can be applied for Public API, but if you can, learn not to upload any API:
+
+example .gitignore
+# environment variables
+.env
+.env.production
+
 ## 👀 Deploy on Netlify
+This is pretty straighforward. 
+- Log in Netlify
+- Add a site from your GitHub account
+- Give your project a name and leave all the BUILD settings as is, no changes are needed. 
 
 ## 👀 Want to learn more?
 
