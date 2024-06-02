@@ -1,35 +1,40 @@
-# Astro, HyGraph, Tailwind CSS Blog-Portfolio
+# 🚀 Astro, Hygraph, Tailwind CSS Blog-Portfolio
+## 👀 A little bit about the project!
+- This is a project I created from scratch for a presentation at OWDDM (Osaka Web Designers & Web Developers Meetup). It is not a complete or a beautiful project, because it will be up to you to that! ("evil" laughter) This was just a starter to introduce Astro and how it could be used as a headless CMS, in this case Hygraph was used. There was no special reason for doing so, was just reading articles on the internet and they were featured in one.
 
-## If you spot any errors or it could be done better, please do let me know!
+## 👀 OWDDM/KWDDM
+If you are living in Osaka or around, or you are just passing through or want to give a presentation feel free to visit us! About OWDDM and KWDDM are volunteer non-profit groups that organizes Meetups in Kansai. We try to have 1 meetup per month and Region with one or two presenters talking about a topic related to either making things in the Web.
 
-## Features
+## 👀 This project is meant to be kept simple.
+
+## Features?
 - Simple starter project
 - No complexed coding, pretty straighforward for starters.
 - [NPM] Tailwind CSS for styling
 - [NPM] Astro-icon for easy access and use of "https://iconify.design" icons.
 - [NPM] tw-neumorphism for some shadow and highlighting of cards 
-- 🌙 Dark mode
+- 🌙 Dark/Light mode
 - 📱 Responsive (layout, images, Tailwind Typography (prose))
 - ♿ Accessible (as measured by https://web.dev/measure/)
 - 🔎 SEO-enabled (as measured by https://web.dev/measure/)
 - Lighthouse score 99/100 (Chrome Lighthouse)
 - 🔗 Open Graph tags for social media sharing
-- Making use of .env (security wise)
+- Making use of .env
 - [NPM] Astro/Sitemap with automatic robots.txt
 - API connection with HyGraph
 
 
 When the project is downloaded and opened in example VS Code, open a terminal and start with below command, see all commands further down:
 
+
 ```sh
 npm install
 ```
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
 
 ## 🚀 Project Structure
 
-Inside of your Astro project, you'll see the following folders and files (only mentioned a few, too much, but you get the idea lol.. ):
+Inside of this Astro project, you'll see the following folders and files (only mentioned a few, too much, am too lazy, no time, but you get the idea):
 
 ```text
 /
@@ -65,8 +70,9 @@ Inside of your Astro project, you'll see the following folders and files (only m
 │   │   └── global.css
 │   ├── env.d.ts
 │   └── types.ts
-├── .env
-├── .gitignore
+
+├── .env <=//Create this!
+
 ├── astro.config.mjs
 ├── package.json
 └── tailwind.config.mjs
@@ -92,9 +98,13 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
 ## 👀 HyGraph and .env variables (for security!)
-In the project an example is created, for starters to learn.
+For this project an existing example project in Hygraph was used, which is named "Developer Portfolio & Blog", use this when connecting to this project. 
 
-In the .env file in the root replace the example keys with your own which you will find in your HyGraph account. You can get it from the HyGraph account.
+### NOTES: 
+- Not the whole "schema" is used from the Hygraph project due the main focus is on Astro.
+
+## Configuration
+In the .env file in the root replace the example keys with your own which you will find in your HyGraph account. You can get it from the HyGraph account. See details below:
 
 API endpoint: Project settings > API access > Endpoints (copy/paste)
 - Use either the "Content API" or the "High Performance Content API", your choice.
@@ -103,12 +113,12 @@ API Token: Project settings > API access > Permanent Auth Tokens (create/add tok
 
 In the .env file paste the token and endpoint, example below:
 HYGRAPH_ENDPOINT=https://api-ap-northeast-1.hygraph.com/v2/xxxxxxxxxxxx/master
-HYGRAPH_TOKEN=whateverTokenThatGotCreatedComesHereAndDoNotUseSpacesYesIKnowAPersonWhomUsedSpacesForBetterReadablity!!!DoNotDoThat!!!
+HYGRAPH_TOKEN=whateverTokenThatGotCreatedComesHereAndDoNotUseSpacesYesIKnowAPersonWhomUsedSpacesForBetterReadablity
 
-Always remember the to check the .gitignore that the .env is listed (see example), because you do not want any API listed on GIT, some exceptions can be applied for Public API, but if you can, learn not to upload any API:
+Always remember the to check the .gitignore that the .env is listed (see example), because you do not want any API keys listed on GIT, some exceptions can be applied for Public API, but if you can...just don't.
 
 example .gitignore
-# environment variables
+... # environment variables ...
 .env
 .env.production
 
@@ -120,4 +130,6 @@ This is pretty straighforward.
 
 ## 👀 Want to learn more?
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+Feel free to check [our documentation](https://docs.astro.build) or jump into the [Discord server](https://astro.build/chat).
+
+

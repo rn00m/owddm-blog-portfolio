@@ -16,7 +16,7 @@ a,
 .btn {
   @apply rounded-lg p-3;
   @apply transition-colors duration-100;
-  @apply hover:text-sky-200;
+  @apply hover:text-sky-500;
 }
 
 .btn {

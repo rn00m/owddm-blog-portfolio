@@ -15,12 +15,28 @@ const {
 >
   <MainHead {title} {description} />
   <body
-    class="bg-gray-50 antialiased transition-colors duration-500 dark:bg-gray-700 text-blue-950 dark:text-gray-50"
+    class="bg-gray-50 antialiased transition-colors duration-500 dark:bg-gray-700 dark:text-gray-50"
   >
-  <Navigation />
-  <main>
-    <slot />
-  </main>
-  <Footer />
-  </body>
+    <Navigation />
+    <main>
+      <div
+        id="scroll-progress"
+        class="bg-orange-600 h-1 fixed top-0 left-0 z-50"
+      >
+      </div>
+      <slot />
+    </main>
+    <Footer />
+    <script type="module">
+      window.addEventListener("scroll", function () {
+        const scrollableHeight =
+          document.documentElement.scrollHeight - window.innerHeight;
+        const scrolled = window.scrollY;
+        const progressBar = document.getElementById("scroll-progress");
+        const progress = (scrolled / scrollableHeight) * 100;
+        progressBar.style.width = progress + "%";
+      });
+    </script>
+    <!--- Ends script --->
+  </body><!--- Starts script --->
 </html>
