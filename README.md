@@ -4,6 +4,8 @@
 
 This was just a starter to introduce Astro and how it could be used as a headless CMS, in this case Hygraph was used. There was no special reason for doing so, was just reading articles on the internet and they were featured in one.
 
+DEMO SITE: https://owddm-workshop.netlify.app/
+
 ## 👀 OWDDM/KWDDM
 If you are living in Osaka or around, or you are just passing through or want to give a presentation feel free to visit us! About OWDDM and KWDDM are volunteer non-profit groups that organizes Meetups in Kansai. We try to have 1 meetup per month and Region with one or two presenters talking about a topic related to either making things in the Web.
 
