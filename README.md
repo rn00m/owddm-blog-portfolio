@@ -1,6 +1,8 @@
 # 🚀 Astro, Hygraph, Tailwind CSS Blog-Portfolio
 ## 👀 A little bit about the project!
-- This is a project I created from scratch for a presentation at OWDDM (Osaka Web Designers & Web Developers Meetup). It is not a complete or a beautiful project, because it will be up to you to that! ("evil" laughter) This was just a starter to introduce Astro and how it could be used as a headless CMS, in this case Hygraph was used. There was no special reason for doing so, was just reading articles on the internet and they were featured in one.
+- My name is Romano Moesa and this is a project I created from scratch for a classical presentation at OWDDM (Osaka Web Designers & Web Developers Meetup). It might not be a complete or a beautiful project, because it will be up to you to that! ("evil" laughter) 
+
+This was just a starter to introduce Astro and how it could be used as a headless CMS, in this case Hygraph was used. There was no special reason for doing so, was just reading articles on the internet and they were featured in one.
 
 ## 👀 OWDDM/KWDDM
 If you are living in Osaka or around, or you are just passing through or want to give a presentation feel free to visit us! About OWDDM and KWDDM are volunteer non-profit groups that organizes Meetups in Kansai. We try to have 1 meetup per month and Region with one or two presenters talking about a topic related to either making things in the Web.
@@ -97,11 +99,12 @@ All commands are run from the root of the project, from a terminal:
 | `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
 | `npm run astro -- --help` | Get help using the Astro CLI                     |
 
-## 👀 HyGraph and .env variables (for security!)
-For this project an existing example project in Hygraph was used, which is named "Developer Portfolio & Blog", use this when connecting to this project. 
+## 👀 Hygraph and .env variables (for security!)
+For this project an existing example project in Hygraph was used, which is named "Developer Portfolio & Blog", use this when connecting to this project. Due to time constraints and nature of this project...the easy way was chosen.
 
 ### NOTES: 
 - Not the whole "schema" is used from the Hygraph project due the main focus is on Astro.
+- In other words it is always best to create only the things you need. This is the way!
 
 ## Configuration
 In the .env file in the root replace the example keys with your own which you will find in your HyGraph account. You can get it from the HyGraph account. See details below:
@@ -122,11 +125,14 @@ example .gitignore
 .env
 .env.production
 
+- Install a webhook in Hygraph goto => Apps and search for Netlify and install it.
+
 ## 👀 Deploy on Netlify
 This is pretty straighforward. 
 - Log in Netlify
 - Add a site from your GitHub account
-- Give your project a name and leave all the BUILD settings as is, no changes are needed. 
+- Give your project a name and leave all the BUILD settings as is, no changes are needed.
+- Add ENV variables
 
 ## 👀 Want to learn more?
 
